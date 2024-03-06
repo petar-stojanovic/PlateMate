@@ -14,6 +14,7 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatButton, MatIconButton} from "@angular/material/button";
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     provideStorage(() => getStorage()),
+    AngularFireDatabaseModule,
     MatToolbar,
     MatIcon,
     MatIconButton,

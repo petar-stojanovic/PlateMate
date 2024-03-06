@@ -1,0 +1,43 @@
+.wrapper {
+  height: calc(100vh - 128px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-container {
+  align-items: center;
+  display: flex;
+}
+
+.login-content {
+  width: 24rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-raised-button {
+  width: 50%;
+  height: 3rem;
+  margin-top: 15px;
+}
+
+.fieldClass {
+  margin-bottom: 1.25rem;
+}
+
+.errorMessage {
+  color: #f44336;
+  font-weight: bold;
+}

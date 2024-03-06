@@ -1,1 +1,99 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="login-container">
+    <div class="login-content">
+      <mat-toolbar class="login-toolbar" color="primary">
+        <div class="m-auto">REGISTER</div>
+      </mat-toolbar>
+      <mat-card>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)"
+              *ngIf="!registerSuccess" class="d-flex flex-column mx-3 my-2">
+          <mat-form-field>
+            <mat-icon matPrefix>person_outline</mat-icon>
+            <mat-label>First Name</mat-label>
+
+            <input autofocus type="text" matInput formControlName="firstName" />
+            <mat-error *ngIf="checkValidation('firstName')">
+              {{ fieldRequired }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>person_outline</mat-icon>
+            <mat-label>Last Name</mat-label>
+
+            <input autofocus type="text" matInput formControlName="lastName" />
+            <mat-error *ngIf="checkValidation('lastName')">
+              {{ fieldRequired }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-label>Email</mat-label>
+
+            <input autofocus type="email" matInput formControlName="email" />
+            <mat-error *ngIf="checkValidation('email')">
+              {{ getEmailErrors() }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>account_circle</mat-icon>
+            <mat-label>Username</mat-label>
+
+            <input autofocus type="text" matInput formControlName="username" />
+            <mat-error *ngIf="checkValidation('username')">
+              {{ fieldRequired }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field [ngClass]="{
+              fieldClass:
+                getPasswordErrors() !== fieldRequired &&
+                getPasswordErrors() !== ''
+            }">
+            <mat-icon matPrefix>lock_outline</mat-icon>
+            <mat-label>Password</mat-label>
+
+            <input type="password" autocomplete="false" matInput formControlName="password" />
+            <mat-error *ngIf="checkValidation('password')">
+              {{ getPasswordErrors() }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-label>Confirm Password</mat-label>
+
+            <input type="password" autocomplete="false" matInput formControlName="confirmPassword" />
+            <mat-error *ngIf="checkValidation('confirmPassword')">
+              {{ getConfirmPasswordErrors() }}
+            </mat-error>
+          </mat-form-field>
+
+          <h2 *ngIf="errorMessage" class="errorMessage">
+            {{errorMessage}}
+          </h2>
+
+          <button [disabled]="registerForm.invalid" type="submit" mat-raised-button color="primary">
+            REGISTER
+          </button>
+        </form>
+        <h1 *ngIf="registerSuccess">
+          Your Registration was successful! Click here to
+          <a routerLink="/login">
+            <button mat-button color="primary" style="font-size: 1.5rem">
+              Log in
+            </button>
+          </a>
+        </h1>
+        <span *ngIf="!registerSuccess">
+          Already have an account?
+          <a routerLink="../login">
+            <button mat-button color="accent">Log in</button>
+          </a>
+        </span>
+      </mat-card>
+    </div>
+  </div>
+</div>
