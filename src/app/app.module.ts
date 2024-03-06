@@ -10,7 +10,10 @@ import {getDatabase, provideDatabase} from '@angular/fire/database';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {environment} from "../environments/environment";
 import {HttpClientModule} from "@angular/common/http";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {MatToolbar} from "@angular/material/toolbar";
+import {MatIcon} from "@angular/material/icon";
+import {MatButton, MatIconButton} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    MatToolbar,
+    MatIcon,
+    MatIconButton,
+    MatButton
   ],
   providers: [
     provideAnimationsAsync()
