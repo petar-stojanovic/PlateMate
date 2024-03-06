@@ -5,8 +5,7 @@
         <div class="m-auto">REGISTER</div>
       </mat-toolbar>
       <mat-card>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)"
-              *ngIf="!registerSuccess" class="d-flex flex-column mx-3 my-2">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" class="d-flex flex-column mx-3 my-2">
           <mat-form-field>
             <mat-icon matPrefix>person_outline</mat-icon>
             <mat-label>First Name</mat-label>
@@ -37,15 +36,6 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field>
-            <mat-icon matPrefix>account_circle</mat-icon>
-            <mat-label>Username</mat-label>
-
-            <input autofocus type="text" matInput formControlName="username" />
-            <mat-error *ngIf="checkValidation('username')">
-              {{ fieldRequired }}
-            </mat-error>
-          </mat-form-field>
 
           <mat-form-field [ngClass]="{
               fieldClass:
@@ -79,15 +69,8 @@
             REGISTER
           </button>
         </form>
-        <h1 *ngIf="registerSuccess">
-          Your Registration was successful! Click here to
-          <a routerLink="/login">
-            <button mat-button color="primary" style="font-size: 1.5rem">
-              Log in
-            </button>
-          </a>
-        </h1>
-        <span *ngIf="!registerSuccess">
+
+        <span >
           Already have an account?
           <a routerLink="../login">
             <button mat-button color="accent">Log in</button>

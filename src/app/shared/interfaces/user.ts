@@ -4,7 +4,5 @@ export interface User {
   displayName?: string;
   photoURL?: string;
   isAnonymous?: boolean;
-  emailVerified?: boolean;
-  phoneNumber?: string;
   refreshToken?: string;
 }

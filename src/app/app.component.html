@@ -1,12 +1,21 @@
 <mat-toolbar color="primary">
   <button mat-button style="font-size: 1.25rem;" routerLink="/">PlateMate</button>
   <span class="example-spacer"></span>
-  <button mat-raised-button style="margin-right: 10px;" color="accent" routerLink="auth/login">
-    Login
-  </button>
-  <button mat-raised-button color="accent" routerLink="auth/register">
-    Register
-  </button>
+  <span *ngIf="user; else noUser">
+    {{ user.displayName }}
+
+    <button mat-raised-button color="accent" (click)="logout()">
+      Logout
+    </button>
+  </span>
+  <ng-template #noUser>
+    <button mat-raised-button style="margin-right: 10px;" color="accent" routerLink="auth/login">
+      Login
+    </button>
+    <button mat-raised-button color="accent" routerLink="auth/register">
+      Register
+    </button>
+  </ng-template>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

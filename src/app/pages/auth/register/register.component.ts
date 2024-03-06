@@ -10,11 +10,10 @@ import {AuthService} from "../../../services/auth.service";
 export class RegisterComponent implements OnInit {
   registerForm: any;
   fieldRequired = 'This field is required';
-  registerSuccess = false;
   errorMessage: string | null = null;
 
   constructor(
-    private auth: AuthService,
+    private _authService: AuthService,
   ) {
   }
 
@@ -30,7 +29,6 @@ export class RegisterComponent implements OnInit {
       firstName: new FormControl(null, [Validators.required]),
       lastName: new FormControl(null, [Validators.required]),
 
-      username: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern(emailregex),
@@ -121,7 +119,7 @@ export class RegisterComponent implements OnInit {
       email,
       password)
 
-    this.auth
+    this._authService
       .register(
         firstName,
         lastName,
@@ -130,7 +128,6 @@ export class RegisterComponent implements OnInit {
         password
       ).then((response) => {
       console.log(response);
-      this.registerSuccess = true;
 
     });
   }

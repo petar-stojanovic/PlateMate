@@ -57,14 +57,16 @@ export class AuthService {
     if (user) {
       const userRef: AngularFirestoreDocument<User> = this.angularFirestore.doc(`users/${user.uid}`);
 
+
+      const x = this.angularFirestore.firestore.doc(`users/${user.uid}`);
+
+
       const data = {
         uid: user.uid,
         email: user.email,
         displayName: user.displayName,
         photoURL: user.photoURL,
         isAnonymous: user.isAnonymous,
-        emailVerified: user.emailVerified,
-        phoneNumber: user.phoneNumber,
         refreshToken: user.refreshToken,
         ...additionalData
       };

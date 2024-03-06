@@ -15,6 +15,7 @@ import {MatToolbar} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
     MatButton
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}
+
   ],
   bootstrap: [AppComponent]
 })
