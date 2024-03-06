@@ -10,6 +10,7 @@ import {getDatabase, provideDatabase} from '@angular/fire/database';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {environment} from "../environments/environment";
 import {HttpClientModule} from "@angular/common/http";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {HttpClientModule} from "@angular/common/http";
     provideDatabase(() => getDatabase()),
     provideStorage(() => getStorage())
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
