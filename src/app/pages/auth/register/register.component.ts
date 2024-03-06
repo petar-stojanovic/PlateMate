@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private _authService: AuthService,
+    private router: Router
   ) {
   }
 
@@ -98,13 +100,7 @@ export class RegisterComponent implements OnInit {
     return validation;
   }
 
-  onSubmit(formData: FormGroup): void {
-    // const firstName = formData.value.firstName;
-    // const lastName = formData.value.lastName;
-    // const username = formData.value.username;
-    // const email = formData.value.email;
-    // const password = formData.value.password;
-    // const confirmPassword = formData.value.confirmPassword;
+  onSubmit(formData: FormGroup) {
     const {
       firstName,
       lastName,
@@ -128,7 +124,7 @@ export class RegisterComponent implements OnInit {
         password
       ).then((response) => {
       console.log(response);
-
+      this.router.navigate(['']);
     });
   }
 }
