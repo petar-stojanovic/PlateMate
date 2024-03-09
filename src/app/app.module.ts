@@ -16,10 +16,12 @@ import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
