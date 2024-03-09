@@ -22,7 +22,6 @@ export class AppComponent {
       .subscribe({
           next: (data) => {
             this.user = data;
-            console.log(data)
           },
           error: (error) => {
             console.error('Error fetching user:', error);

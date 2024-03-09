@@ -17,6 +17,10 @@ import {MatButton, MatIconButton} from "@angular/material/button";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { HomeComponent } from './pages/home/home.component';
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
+import {MatInput} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,16 @@ import { HomeComponent } from './pages/home/home.component';
     MatToolbar,
     MatIcon,
     MatIconButton,
-    MatButton
+    MatButton,
+    MatFormField,
+    MatLabel,
+    MatStepLabel,
+    MatInput,
+    ReactiveFormsModule,
+    MatStep,
+    MatStepper,
+    MatStepperPrevious,
+    MatStepperNext
   ],
   providers: [
     provideAnimationsAsync(),
