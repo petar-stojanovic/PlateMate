@@ -9,17 +9,129 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class HomeComponent {
 
   goalForms: FormGroup[] = [];
+  goalForm!: FormGroup;
+  genderForm!: FormGroup;
+  activityLevelForm!: FormGroup;
+  dietaryPreferencesForm!: FormGroup;
+  flavorsForm!: FormGroup;
+  mealsPerDayForm!: FormGroup;
+  allergiesForm!: FormGroup;
+  avoidFoodsForm!: FormGroup;
+  additionalConsiderationsForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {
 
-    this.goalForms.push(this._formBuilder.group({
+  constructor(private formBuilder: FormBuilder) {
+
+    this.initGoalForm();
+    this.initGenderForm();
+    this.initActivityLevelForm();
+    this.initDietaryPreferencesForm();
+    this.initFlavorsForm();
+    this.initMealsPerDayForm();
+    this.initAllergiesForm();
+    this.initAvoidFoodsForm();
+    this.initAdditionalConsiderationsForm();
+
+
+    this.goalForms.push(this.formBuilder.group({
       goal: ['', Validators.required],
     }))
 
-    this.goalForms.push(this._formBuilder.group({
+    this.goalForms.push(this.formBuilder.group({
       secondCtrl: ['', Validators.required],
     }));
 
     console.log(this.goalForms)
   }
+
+  //TODO change following methods
+  initGoalForm() {
+    this.goalForm = this.formBuilder.group({
+      primaryGoal: ['', Validators.required],
+      otherGoal: ['']
+    });
+  }
+
+  initGenderForm() {
+    this.genderForm = this.formBuilder.group({
+      gender: ['', Validators.required]
+    });
+  }
+
+  initActivityLevelForm() {
+    this.activityLevelForm = this.formBuilder.group({
+      activityLevel: ['', Validators.required]
+    });
+  }
+
+  initDietaryPreferencesForm() {
+    this.dietaryPreferencesForm = this.formBuilder.group({
+      restrictions: this.formBuilder.group({
+        omnivore: [false],
+        vegetarian: [false],
+        vegan: [false],
+        glutenFree: [false],
+        dairyFree: [false],
+        nutFree: [false],
+        otherRestriction: ['']
+      }),
+      preferences: this.formBuilder.group({
+        mediterranean: [false],
+        paleo: [false],
+        keto: [false],
+        whole30: [false],
+        lowCarb: [false],
+        highProtein: [false],
+        otherPreference: ['']
+      })
+    });
+  }
+
+  initFlavorsForm() {
+    this.flavorsForm = this.formBuilder.group({
+      sweet: [false],
+      spicy: [false],
+      savory: [false],
+      sour: [false],
+      bitter: [false],
+      otherFlavor: ['']
+    });
+  }
+
+  initMealsPerDayForm() {
+    this.mealsPerDayForm = this.formBuilder.group({
+      mealsPerDay: ['', Validators.required]
+    });
+  }
+
+  initAllergiesForm() {
+    this.allergiesForm = this.formBuilder.group({
+      gluten: [false],
+      dairy: [false],
+      nuts: [false],
+      shellfish: [false],
+      soy: [false],
+      otherAllergy: ['']
+    });
+  }
+
+  initAvoidFoodsForm() {
+    this.avoidFoodsForm = this.formBuilder.group({
+      seafood: [false],
+      redMeat: [false],
+      pork: [false],
+      eggs: [false],
+      specificVegetablesFruits: [''],
+      otherAvoidance: ['']
+    });
+  }
+
+  initAdditionalConsiderationsForm() {
+    this.additionalConsiderationsForm = this.formBuilder.group({
+      dailyCost: ['', Validators.required],
+      culinarySkills: ['', Validators.required],
+      additionalInformation: ['']
+    });
+  }
+
 }
