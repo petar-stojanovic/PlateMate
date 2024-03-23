@@ -12,7 +12,7 @@ export class HomeComponent {
   goalForm!: FormGroup;
   userDetailsForm!: FormGroup;
   activityLevelForm!: FormGroup;
-  dietaryPreferencesForm!: FormGroup;
+  dietaryForm!: FormGroup;
   flavorsForm!: FormGroup;
   mealsPerDayForm!: FormGroup;
   allergiesForm!: FormGroup;
@@ -69,24 +69,24 @@ export class HomeComponent {
   }
 
   initDietaryPreferencesForm() {
-    this.dietaryPreferencesForm = this.formBuilder.group({
-      restrictions: this.formBuilder.group({
+    this.dietaryForm = this.formBuilder.group({
+      dietaryRestrictions: this.formBuilder.group({
         omnivore: [false],
         vegetarian: [false],
         vegan: [false],
         glutenFree: [false],
         dairyFree: [false],
         nutFree: [false],
-        otherRestriction: ['']
+        other: ['']
       }),
-      preferences: this.formBuilder.group({
+      dietaryPreferences: this.formBuilder.group({
         mediterranean: [false],
         paleo: [false],
         keto: [false],
         whole30: [false],
         lowCarb: [false],
         highProtein: [false],
-        otherPreference: ['']
+        other: ['']
       })
     });
   }

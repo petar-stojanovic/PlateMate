@@ -24,6 +24,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatTooltip} from "@angular/material/tooltip";
+import {MatCheckbox} from "@angular/material/checkbox";
+import {MatDivider} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import {MatTooltip} from "@angular/material/tooltip";
     MatRadioButton,
     MatSelect,
     MatOption,
-    MatTooltip
+    MatTooltip,
+    MatCheckbox,
+    MatDivider
   ],
   providers: [
     provideAnimationsAsync(),
