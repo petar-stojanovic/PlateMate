@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {MatChipEditedEvent, MatChipInputEvent} from "@angular/material/chips";
+import {AiService} from "../../services/ai.service";
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,8 @@ export class HomeComponent {
   additionalConsiderationsForm!: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private aiService: AiService) {
 
     this.initGoalForm();
     this.initGenderForm();
