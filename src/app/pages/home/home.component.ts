@@ -12,6 +12,7 @@ export class HomeComponent {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   flavors = [{name: 'Sweet'}, {name: 'Spicy'}, {name: 'Crunchy'}];
+  allergies = [{name: 'Milk'}, {name: 'Oats'}];
 
 
   goalForm!: FormGroup;
@@ -114,14 +115,9 @@ export class HomeComponent {
 
   initAllergiesForm() {
     this.allergiesForm = this.formBuilder.group({
-      milk: [false],
-      eggs: [false],
-      fish: [false],
-      nuts: [false],
-      wheat: [false],
-      sesame: [false],
-      other: ['']
+      allergyList: ['']
     });
+    this.allergiesForm.get('allergyList')?.setValue(this.allergies.map(f => f.name));
   }
 
 
@@ -172,11 +168,28 @@ export class HomeComponent {
     event.chipInput!.clear();
   }
 
-  removeFlavor(fruit: any): void {
-    const index = this.flavors.indexOf(fruit);
+  removeFlavor(flavor: any): void {
+    const index = this.flavors.indexOf(flavor);
 
     if (index >= 0) {
       this.flavors.splice(index, 1);
+    }
+  }
+
+  addAllergy(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+    if (value) {
+      this.allergies.push({name: value});
+      this.allergiesForm.get('allergyList')?.setValue(this.allergies.map(f => f.name));
+    }
+    event.chipInput!.clear();
+  }
+
+  removeAllergy(allergy: any): void {
+    const index = this.allergies.indexOf(allergy);
+
+    if (index >= 0) {
+      this.allergies.splice(index, 1);
     }
   }
 }

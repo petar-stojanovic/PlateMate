@@ -181,16 +181,16 @@
 
           <mat-form-field appearance="fill" class="w-100 mt-16" >
             <mat-label>Favorite Flavors</mat-label>
-            <mat-chip-grid #chipGrid formControlName="flavorsList" >
-              <mat-chip-row *ngFor="let fruit of flavors"
-                            (removed)="removeFlavor(fruit)">
-                {{ fruit.name }}
+            <mat-chip-grid #flavorChipGrid formControlName="flavorsList" >
+              <mat-chip-row *ngFor="let flavor of flavors"
+                            (removed)="removeFlavor(flavor)">
+                {{ flavor.name }}
                 <button matChipRemove>
                   <mat-icon matChipRemove>cancel</mat-icon>
                 </button>
               </mat-chip-row>
               <input placeholder="New flavor..."
-                     [matChipInputFor]="chipGrid"
+                     [matChipInputFor]="flavorChipGrid"
                      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                      [matChipInputAddOnBlur]="addOnBlur"
                      (matChipInputTokenEnd)="addFlavor($event)"/>
@@ -245,19 +245,24 @@
 
         <div class="form-control">
           <span>Do you have any food allergies or intolerances we should be aware of?</span>
-          <section class="mt-16">
-            <mat-checkbox formControlName="milk" value="Milk">Milk</mat-checkbox>
-            <mat-checkbox formControlName="eggs" value="Eggs">Eggs</mat-checkbox>
-            <mat-checkbox formControlName="fish" value="Fish">Fish</mat-checkbox>
-            <mat-checkbox formControlName="nuts" value="Nuts">Nuts</mat-checkbox>
-            <mat-checkbox formControlName="wheat" value="Wheat">Wheat</mat-checkbox>
-            <mat-checkbox formControlName="sesame" value="Sesame">Sesame</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Other</mat-label>
-              <input matInput formControlName="other" placeholder="Other">
-            </mat-form-field>
-          </section>
 
+          <mat-form-field appearance="fill" class="w-100 mt-16" >
+            <mat-label>Allergies</mat-label>
+            <mat-chip-grid #allergyChipGrid formControlName="allergyList" >
+              <mat-chip-row *ngFor="let allergy of allergies"
+                            (removed)="removeAllergy(allergy)">
+                {{ allergy.name }}
+                <button matChipRemove>
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              <input placeholder="New allergy..."
+                     [matChipInputFor]="allergyChipGrid"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="addAllergy($event)"/>
+            </mat-chip-grid>
+          </mat-form-field>
         </div>
 
         <div class="mt-16">
