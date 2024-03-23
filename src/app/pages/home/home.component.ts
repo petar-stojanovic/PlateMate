@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {COMMA, ENTER} from "@angular/cdk/keycodes";
+import {MatChipEditedEvent, MatChipInputEvent} from "@angular/material/chips";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,10 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  addOnBlur = true;
+  readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  flavors = [{name: 'Sweet'}, {name: 'Spicy'}, {name: 'Crunchy'}];
+
 
   goalForm!: FormGroup;
   userDetailsForm!: FormGroup;
@@ -30,7 +36,6 @@ export class HomeComponent {
     this.initAllergiesForm();
     this.initDailyMealCostForm();
     this.initAdditionalConsiderationsForm();
-
   }
 
 
@@ -95,13 +100,10 @@ export class HomeComponent {
 
   initFlavorsForm() {
     this.flavorsForm = this.formBuilder.group({
-      sweet: [false],
-      spicy: [false],
-      savory: [false],
-      sour: [false],
-      bitter: [false],
-      other: ['']
+      flavorsList: [''],
     });
+    this.flavorsForm.get('flavorsList')?.setValue(this.flavors.map(f => f.name));
+
   }
 
   initMealsPerDayForm() {
@@ -161,4 +163,20 @@ export class HomeComponent {
     console.log(data);
   }
 
+  addFlavor(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+    if (value) {
+      this.flavors.push({name: value});
+      this.flavorsForm.get('flavorsList')?.setValue(this.flavors.map(f => f.name));
+    }
+    event.chipInput!.clear();
+  }
+
+  removeFlavor(fruit: any): void {
+    const index = this.flavors.indexOf(fruit);
+
+    if (index >= 0) {
+      this.flavors.splice(index, 1);
+    }
+  }
 }

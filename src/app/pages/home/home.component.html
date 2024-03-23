@@ -2,173 +2,173 @@
 
   <mat-stepper class="stepper" [linear]="true" #stepper>
 
-    <mat-step [stepControl]="goalForm">
-      <form [formGroup]="goalForm">
-        <h1>What is your primary goal?</h1>
-        <div class="form-control">
-          <span>Choose one:</span>
-          <mat-radio-group formControlName="primaryGoal">
-            <mat-radio-button class="d-block" value="Weight Loss">Weight Loss</mat-radio-button>
-            <mat-radio-button class="d-block" value="Muscle Gain">Muscle Gain</mat-radio-button>
-            <mat-radio-button class="d-block" value="Maintenance">Maintenance</mat-radio-button>
-            <mat-radio-button class="d-block" value="Improved Health">Improved Health</mat-radio-button>
-            <mat-radio-button class="d-block" value="other">
-              Other
-              <mat-form-field *ngIf="goalForm.get('primaryGoal')?.value === 'other'" subscriptSizing="dynamic">
-                <input matInput formControlName="other" placeholder="Please specify">
-              </mat-form-field>
-            </mat-radio-button>
-          </mat-radio-group>
-        </div>
+    <!--    <mat-step [stepControl]="goalForm">-->
+    <!--      <form [formGroup]="goalForm">-->
+    <!--        <h1>What is your primary goal?</h1>-->
+    <!--        <div class="form-control">-->
+    <!--          <span>Choose one:</span>-->
+    <!--          <mat-radio-group formControlName="primaryGoal">-->
+    <!--            <mat-radio-button class="d-block" value="Weight Loss">Weight Loss</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Muscle Gain">Muscle Gain</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Maintenance">Maintenance</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Improved Health">Improved Health</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="other">-->
+    <!--              Other-->
+    <!--              <mat-form-field *ngIf="goalForm.get('primaryGoal')?.value === 'other'" subscriptSizing="dynamic">-->
+    <!--                <input matInput formControlName="other" placeholder="Please specify">-->
+    <!--              </mat-form-field>-->
+    <!--            </mat-radio-button>-->
+    <!--          </mat-radio-group>-->
+    <!--        </div>-->
 
-        <div>
-          <button mat-raised-button class="mt-16" color="primary" matStepperNext [disabled]="goalForm.invalid">Next
-          </button>
-        </div>
-      </form>
-    </mat-step>
+    <!--        <div>-->
+    <!--          <button mat-raised-button class="mt-16" color="primary" matStepperNext [disabled]="goalForm.invalid">Next-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
 
-    <mat-step [stepControl]="userDetailsForm">
-      <form [formGroup]="userDetailsForm">
+    <!--    <mat-step [stepControl]="userDetailsForm">-->
+    <!--      <form [formGroup]="userDetailsForm">-->
 
-        <h1>Please provide the following information?</h1>
+    <!--        <h1>Please provide the following information?</h1>-->
 
-        <div class="form-control">
-          <span>Gender:</span>
-          <mat-radio-group formControlName="gender">
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="female">Female</mat-radio-button>
-          </mat-radio-group>
-        </div>
+    <!--        <div class="form-control">-->
+    <!--          <span>Gender:</span>-->
+    <!--          <mat-radio-group formControlName="gender">-->
+    <!--            <mat-radio-button value="male">Male</mat-radio-button>-->
+    <!--            <mat-radio-button value="female">Female</mat-radio-button>-->
+    <!--          </mat-radio-group>-->
+    <!--        </div>-->
 
-        <div class="form-control flex align-center gap-10">
-          <span>Weight:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="weight" type="number" placeholder="Weight">
-          </mat-form-field>
-          <mat-form-field subscriptSizing="dynamic">
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="weightMeasurement">
-              <mat-option value="kgs">KG</mat-option>
-              <mat-option value="lbs">LB</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+    <!--        <div class="form-control flex align-center gap-10">-->
+    <!--          <span>Weight:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="weight" type="number" placeholder="Weight">-->
+    <!--          </mat-form-field>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <mat-label>Select</mat-label>-->
+    <!--            <mat-select formControlName="weightMeasurement">-->
+    <!--              <mat-option value="kgs">KG</mat-option>-->
+    <!--              <mat-option value="lbs">LB</mat-option>-->
+    <!--            </mat-select>-->
+    <!--          </mat-form-field>-->
+    <!--        </div>-->
 
-        <div class="form-control flex align-center gap-10">
-          <span>Height:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="height" type="number" placeholder="Height">
-          </mat-form-field>
-          <mat-form-field subscriptSizing="dynamic">
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="heightMeasurement">
-              <mat-option value="cm">Centimeters</mat-option>
-              <mat-option value="inch">Inches</mat-option>
-            </mat-select>
-          </mat-form-field>
+    <!--        <div class="form-control flex align-center gap-10">-->
+    <!--          <span>Height:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="height" type="number" placeholder="Height">-->
+    <!--          </mat-form-field>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <mat-label>Select</mat-label>-->
+    <!--            <mat-select formControlName="heightMeasurement">-->
+    <!--              <mat-option value="cm">Centimeters</mat-option>-->
+    <!--              <mat-option value="inch">Inches</mat-option>-->
+    <!--            </mat-select>-->
+    <!--          </mat-form-field>-->
 
-        </div>
+    <!--        </div>-->
 
-        <div class="form-control">
-          <span>Age:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="age" type="number" placeholder="Age">
-          </mat-form-field>
-        </div>
+    <!--        <div class="form-control">-->
+    <!--          <span>Age:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="age" type="number" placeholder="Age">-->
+    <!--          </mat-form-field>-->
+    <!--        </div>-->
 
-        <div class="mt-16">
-          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="userDetailsForm.invalid">
-            Next
-          </button>
-        </div>
-      </form>
-    </mat-step>
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="userDetailsForm.invalid">-->
+    <!--            Next-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
 
-    <mat-step [stepControl]="activityLevelForm">
-      <form [formGroup]="activityLevelForm">
+    <!--    <mat-step [stepControl]="activityLevelForm">-->
+    <!--      <form [formGroup]="activityLevelForm">-->
 
-        <h1>What is your activity Level?</h1>
+    <!--        <h1>What is your activity Level?</h1>-->
 
-        <div class="form-control">
-          <span>Choose one:</span>
-          <mat-radio-group formControlName="activityLevel">
-            <mat-radio-button class="d-block" matTooltip="Little to no exercise" value="Sedentary active">No Activity
-            </mat-radio-button>
-            <mat-radio-button class="d-block" matTooltip="Light exercise/sports 1-3 days/week" value="Lightly active">
-              Lightly active
-            </mat-radio-button>
-            <mat-radio-button class="d-block" matTooltip="Moderate exercise/sports 3-5 days/week"
-                              value="Moderately active">Moderately active
-            </mat-radio-button>
-            <mat-radio-button class="d-block" matTooltip="Hard exercise/sports 6-7 days a week" value="Very active">Very
-              active
-            </mat-radio-button>
-            <mat-radio-button class="d-block" matTooltip="Very hard exercise/sports & physical job or 2x training"
-                              value="Extremely active">Extremely active
-            </mat-radio-button>
-          </mat-radio-group>
+    <!--        <div class="form-control">-->
+    <!--          <span>Choose one:</span>-->
+    <!--          <mat-radio-group formControlName="activityLevel">-->
+    <!--            <mat-radio-button class="d-block" matTooltip="Little to no exercise" value="Sedentary active">No Activity-->
+    <!--            </mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" matTooltip="Light exercise/sports 1-3 days/week" value="Lightly active">-->
+    <!--              Lightly active-->
+    <!--            </mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" matTooltip="Moderate exercise/sports 3-5 days/week"-->
+    <!--                              value="Moderately active">Moderately active-->
+    <!--            </mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" matTooltip="Hard exercise/sports 6-7 days a week" value="Very active">Very-->
+    <!--              active-->
+    <!--            </mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" matTooltip="Very hard exercise/sports & physical job or 2x training"-->
+    <!--                              value="Extremely active">Extremely active-->
+    <!--            </mat-radio-button>-->
+    <!--          </mat-radio-group>-->
 
-        </div>
+    <!--        </div>-->
 
-        <div class="mt-16">
-          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="activityLevelForm.invalid">
-            Next
-          </button>
-        </div>
-      </form>
-    </mat-step>
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="activityLevelForm.invalid">-->
+    <!--            Next-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
 
-    <mat-step [stepControl]="dietaryForm">
-      <form [formGroup]="dietaryForm">
+    <!--    <mat-step [stepControl]="dietaryForm">-->
+    <!--      <form [formGroup]="dietaryForm">-->
 
-        <h1>Dietary Preferences?</h1>
+    <!--        <h1>Dietary Preferences?</h1>-->
 
-        <div class="form-control">
-          <span>What is your diet</span>
+    <!--        <div class="form-control">-->
+    <!--          <span>What is your diet</span>-->
 
-          <mat-radio-group formControlName="diet">
-            <mat-radio-button class="d-block" value="Omnivore">Omnivore</mat-radio-button>
-            <mat-radio-button class="d-block" value="Vegetarian">Vegetarian</mat-radio-button>
-            <mat-radio-button class="d-block" value="Vegan">Vegan</mat-radio-button>
-            <mat-radio-button class="d-block" value="Pescatarian">Pescatarian</mat-radio-button>
-            <mat-radio-button class="d-block" value="other">
-              Other
-              <mat-form-field *ngIf="dietaryForm.get('diet')?.value=== 'other'" subscriptSizing="dynamic">
-                <input matInput formControlName="other" placeholder="Please specify">
-              </mat-form-field>
-            </mat-radio-button>
-          </mat-radio-group>
+    <!--          <mat-radio-group formControlName="diet">-->
+    <!--            <mat-radio-button class="d-block" value="Omnivore">Omnivore</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Vegetarian">Vegetarian</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Vegan">Vegan</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="Pescatarian">Pescatarian</mat-radio-button>-->
+    <!--            <mat-radio-button class="d-block" value="other">-->
+    <!--              Other-->
+    <!--              <mat-form-field *ngIf="dietaryForm.get('diet')?.value=== 'other'" subscriptSizing="dynamic">-->
+    <!--                <input matInput formControlName="other" placeholder="Please specify">-->
+    <!--              </mat-form-field>-->
+    <!--            </mat-radio-button>-->
+    <!--          </mat-radio-group>-->
 
-        </div>
-        <mat-divider></mat-divider>
+    <!--        </div>-->
+    <!--        <mat-divider></mat-divider>-->
 
-        <!--        <div class="form-control mt-16">-->
-        <!--          <fieldset formGroupName="dietaryPreferences">-->
-        <!--            <legend>Dietary Preferences?</legend>-->
-        <!--            <mat-checkbox formControlName="mediterranean" value="Mediterranean">Mediterranean</mat-checkbox>-->
-        <!--            <mat-checkbox formControlName="paleo" value="Paleo">Paleo</mat-checkbox>-->
-        <!--            <mat-checkbox formControlName="keto" value="Keto">Keto</mat-checkbox>-->
-        <!--            <mat-checkbox formControlName="whole30" value="Whole30">Whole30</mat-checkbox>-->
-        <!--            <mat-checkbox formControlName="lowCarb" value="Low-Carb">Low-Carb</mat-checkbox>-->
-        <!--            <mat-checkbox formControlName="highProtein" value="High-Protein">High-Protein</mat-checkbox>-->
-        <!--            <mat-form-field appearance="fill" subscriptSizing="dynamic">-->
-        <!--              <mat-label>Other</mat-label>-->
-        <!--              <input matInput formControlName="other" placeholder="Other">-->
-        <!--            </mat-form-field>-->
-        <!--          </fieldset>-->
+    <!--        &lt;!&ndash;        <div class="form-control mt-16">&ndash;&gt;-->
+    <!--        &lt;!&ndash;          <fieldset formGroupName="dietaryPreferences">&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <legend>Dietary Preferences?</legend>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="mediterranean" value="Mediterranean">Mediterranean</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="paleo" value="Paleo">Paleo</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="keto" value="Keto">Keto</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="whole30" value="Whole30">Whole30</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="lowCarb" value="Low-Carb">Low-Carb</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-checkbox formControlName="highProtein" value="High-Protein">High-Protein</mat-checkbox>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <mat-form-field appearance="fill" subscriptSizing="dynamic">&ndash;&gt;-->
+    <!--        &lt;!&ndash;              <mat-label>Other</mat-label>&ndash;&gt;-->
+    <!--        &lt;!&ndash;              <input matInput formControlName="other" placeholder="Other">&ndash;&gt;-->
+    <!--        &lt;!&ndash;            </mat-form-field>&ndash;&gt;-->
+    <!--        &lt;!&ndash;          </fieldset>&ndash;&gt;-->
 
-        <!--        </div>-->
+    <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
 
-        <div class="mt-16">
-          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="dietaryForm.invalid">Next
-          </button>
-        </div>
-      </form>
-    </mat-step>
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext [disabled]="dietaryForm.invalid">Next-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
 
     <mat-step [stepControl]="flavorsForm">
       <form [formGroup]="flavorsForm">
@@ -176,18 +176,26 @@
         <h1>Which flavors do you enjoy the most?</h1>
 
         <div class="form-control">
-          <span>Select all that apply:</span>
-          <section class="mt-16">
-            <mat-checkbox formControlName="sweet" value="Sweet">Sweet</mat-checkbox>
-            <mat-checkbox formControlName="spicy" value="Spicy">Spicy</mat-checkbox>
-            <mat-checkbox formControlName="savory" value="Savory">Savory</mat-checkbox>
-            <mat-checkbox formControlName="sour" value="Sour">Sour</mat-checkbox>
-            <mat-checkbox formControlName="bitter" value="Bitter">Bitter</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Other</mat-label>
-              <input matInput formControlName="other" placeholder="Other">
-            </mat-form-field>
-          </section>
+          <span class="gray">For example: Sweet, Spicy, Crunchy...</span>
+          <br>
+
+          <mat-form-field appearance="fill" class="w-100 mt-16" >
+            <mat-label>Favorite Flavors</mat-label>
+            <mat-chip-grid #chipGrid formControlName="flavorsList" >
+              <mat-chip-row *ngFor="let fruit of flavors"
+                            (removed)="removeFlavor(fruit)">
+                {{ fruit.name }}
+                <button matChipRemove>
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              <input placeholder="New flavor..."
+                     [matChipInputFor]="chipGrid"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="addFlavor($event)"/>
+            </mat-chip-grid>
+          </mat-form-field>
 
         </div>
 

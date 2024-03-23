@@ -26,6 +26,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {MatTooltip} from "@angular/material/tooltip";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatDivider} from "@angular/material/divider";
+import {MatChipGrid, MatChipInput, MatChipRemove, MatChipRow} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,11 @@ import {MatDivider} from "@angular/material/divider";
     MatOption,
     MatTooltip,
     MatCheckbox,
-    MatDivider
+    MatDivider,
+    MatChipGrid,
+    MatChipRow,
+    MatChipInput,
+    MatChipRemove
   ],
   providers: [
     provideAnimationsAsync(),
