@@ -23,6 +23,7 @@ import {MatInput} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 import {MatOption, MatSelect} from "@angular/material/select";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MatOption, MatSelect} from "@angular/material/select";
     MatRadioGroup,
     MatRadioButton,
     MatSelect,
-    MatOption
+    MatOption,
+    MatTooltip
   ],
   providers: [
     provideAnimationsAsync(),

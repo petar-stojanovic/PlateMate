@@ -9,7 +9,7 @@
 
 .stepper {
   width: 35rem;
-  box-shadow: 0 0 10px 1px #999999;
+  box-shadow: 0 0 15px 5px rgba(46, 82, 178, 0.52);
 }
 
 .flex {
@@ -43,6 +43,12 @@
 
 :host ::ng-deep mat-radio-button label, form div {
   font-size: 1.15rem !important;
+}
+
+:host ::ng-deep mat-radio-group{
+  mat-radio-button{
+    margin: 4px 0;
+  }
 }
 
 .mt-16 {

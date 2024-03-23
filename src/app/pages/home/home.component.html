@@ -30,56 +30,83 @@
     <!--      </form>-->
     <!--    </mat-step>-->
 
-    <mat-step [stepControl]="userDetailsForm">
-      <form [formGroup]="userDetailsForm">
-        <ng-template matStepLabel>
+    <!--    <mat-step [stepControl]="userDetailsForm">-->
+    <!--      <form [formGroup]="userDetailsForm">-->
+    <!--        <ng-template matStepLabel>-->
+    <!--          <label class="stepper-label">-->
+    <!--            Please provide the following information:-->
+    <!--          </label>-->
+    <!--        </ng-template>-->
+
+    <!--        <div class="form-control">-->
+    <!--          <span>Gender:</span>-->
+    <!--          <mat-radio-group formControlName="gender">-->
+    <!--            <mat-radio-button value="male">Male</mat-radio-button>-->
+    <!--            <mat-radio-button value="female">Female</mat-radio-button>-->
+    <!--          </mat-radio-group>-->
+    <!--        </div>-->
+
+    <!--        <div class="form-control flex align-center gap-10">-->
+    <!--          <span>Weight:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="weight" type="number" placeholder="Weight">-->
+    <!--          </mat-form-field>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <mat-label>Select</mat-label>-->
+    <!--            <mat-select formControlName="weightMeasurement">-->
+    <!--              <mat-option value="kgs">KG</mat-option>-->
+    <!--              <mat-option value="lbs">LB</mat-option>-->
+    <!--            </mat-select>-->
+    <!--          </mat-form-field>-->
+    <!--        </div>-->
+
+    <!--        <div class="form-control flex align-center gap-10">-->
+    <!--          <span>Height:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="height" type="number" placeholder="Height">-->
+    <!--          </mat-form-field>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <mat-label>Select</mat-label>-->
+    <!--            <mat-select formControlName="heightMeasurement">-->
+    <!--              <mat-option value="cm">Centimeters</mat-option>-->
+    <!--              <mat-option value="inch">Inches</mat-option>-->
+    <!--            </mat-select>-->
+    <!--          </mat-form-field>-->
+
+    <!--        </div>-->
+
+    <!--        <div class="form-control">-->
+    <!--          <span>Age:</span>-->
+    <!--          <mat-form-field subscriptSizing="dynamic">-->
+    <!--            <input matInput formControlName="age" type="number" placeholder="Age">-->
+    <!--          </mat-form-field>-->
+    <!--        </div>-->
+
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
+
+    <mat-step [stepControl]="activityLevelForm">
+      <form [formGroup]="activityLevelForm">
+        <ng-template class="fs-16" matStepLabel>
           <label class="stepper-label">
-            Please provide the following information:
+            What is your activity Level?
           </label>
         </ng-template>
 
         <div class="form-control">
-          <span>Gender:</span>
-          <mat-radio-group formControlName="gender">
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="female">Female</mat-radio-button>
+          <span>Choose one:</span>
+          <mat-radio-group formControlName="activityLevel">
+            <mat-radio-button class="d-block" matTooltip="Little to no exercise" value="Sedentary active">No Activity</mat-radio-button>
+            <mat-radio-button class="d-block" matTooltip="Light exercise/sports 1-3 days/week" value="Lightly active">Lightly active </mat-radio-button>
+            <mat-radio-button class="d-block" matTooltip="Moderate exercise/sports 3-5 days/week" value="Moderately active">Moderately active </mat-radio-button>
+            <mat-radio-button class="d-block" matTooltip="Hard exercise/sports 6-7 days a week" value="Very active">Very active </mat-radio-button>
+            <mat-radio-button class="d-block" matTooltip="Very hard exercise/sports & physical job or 2x training" value="Extremely active">Extremely active </mat-radio-button>
           </mat-radio-group>
-        </div>
 
-        <div class="form-control flex align-center gap-10">
-          <span>Weight:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="weight" type="number" placeholder="Weight">
-          </mat-form-field>
-          <mat-form-field subscriptSizing="dynamic">
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="weightMeasurement">
-              <mat-option value="kgs">KG</mat-option>
-              <mat-option value="lbs">LB</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="form-control flex align-center gap-10">
-          <span>Height:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="height" type="number" placeholder="Height">
-          </mat-form-field>
-          <mat-form-field subscriptSizing="dynamic">
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="heightMeasurement">
-              <mat-option value="cm">Centimeters</mat-option>
-              <mat-option value="inch">Inches</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-        </div>
-
-        <div class="form-control">
-          <span>Age:</span>
-          <mat-form-field subscriptSizing="dynamic">
-            <input matInput formControlName="age" type="number" placeholder="Age">
-          </mat-form-field>
         </div>
 
         <div class="mt-16">
@@ -87,19 +114,8 @@
           <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step>
 
-    <mat-step>
-      <ng-template matStepLabel>
-        <label class="stepper-label">
-          What is your activity Level?
-        </label>
-      </ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+
     </mat-step>
   </mat-stepper>
 </div>
