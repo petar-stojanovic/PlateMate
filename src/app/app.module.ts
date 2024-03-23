@@ -21,6 +21,7 @@ import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
 import {MatInput} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatStep,
     MatStepper,
     MatStepperPrevious,
-    MatStepperNext
+    MatStepperNext,
+    MatRadioGroup,
+    MatRadioButton
   ],
   providers: [
     provideAnimationsAsync(),

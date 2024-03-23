@@ -10,7 +10,7 @@ export class HomeComponent {
 
   goalForms: FormGroup[] = [];
   goalForm!: FormGroup;
-  genderForm!: FormGroup;
+  userDetailsForm!: FormGroup;
   activityLevelForm!: FormGroup;
   dietaryPreferencesForm!: FormGroup;
   flavorsForm!: FormGroup;
@@ -48,13 +48,15 @@ export class HomeComponent {
   initGoalForm() {
     this.goalForm = this.formBuilder.group({
       primaryGoal: ['', Validators.required],
-      otherGoal: ['']
     });
   }
 
   initGenderForm() {
-    this.genderForm = this.formBuilder.group({
-      gender: ['', Validators.required]
+    this.userDetailsForm = this.formBuilder.group({
+      gender: ['male', Validators.required],
+      weight: ['', Validators.required],
+      height: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(1)]]
     });
   }
 

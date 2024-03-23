@@ -1,21 +1,35 @@
 <div class="container">
 
   <mat-stepper class="stepper" orientation="vertical" [linear]="true" #stepper>
-    <mat-step [stepControl]="goalForms[0]">
-      <form [formGroup]="goalForms[0]">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="goal" required>
-        </mat-form-field>
+    <mat-step [stepControl]="goalForm">
+      <form [formGroup]="goalForm">
+        <ng-template class="fs-16" matStepLabel>
+          <label class="stepper-label">
+            What is your primary goal?
+          </label>
+        </ng-template>
+        <mat-radio-group formControlName="primaryGoal">
+          <mat-radio-button class="d-block" value="Weight Loss">Weight Loss</mat-radio-button>
+          <mat-radio-button class="d-block" value="Muscle Gain">Muscle Gain</mat-radio-button>
+          <mat-radio-button class="d-block" value="Maintenance">Maintenance</mat-radio-button>
+          <mat-radio-button class="d-block" value="Improved Health">Improved Health</mat-radio-button>
+          <mat-radio-button class="d-block" value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+          <mat-form-field *ngIf="goalForm.get('primaryGoal')?.value === 'Other'">
+            <input matInput placeholder="Please specify">
+          </mat-form-field>
         <div>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
+          <button mat-raised-button class="mt-10" color="primary" matStepperNext [disabled]="goalForm.invalid">Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="goalForms[1]">
       <form [formGroup]="goalForms[1]">
-        <ng-template matStepLabel>Fill out your address</ng-template>
+        <ng-template matStepLabel>
+          <label class="stepper-label">
+            Please provide the following information:
+          </label>
+        </ng-template>
         <mat-form-field>
           <mat-label>Address</mat-label>
           <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
@@ -28,7 +42,11 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
+      <ng-template matStepLabel>
+        <label class="stepper-label">
+          What is your activity Level?
+        </label>
+      </ng-template>
       <p>You are now done.</p>
       <div>
         <button mat-button matStepperPrevious>Back</button>

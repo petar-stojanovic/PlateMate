@@ -12,6 +12,23 @@
   box-shadow: 0 0 10px 1px #999999;
 }
 
-.mx-10{
+.mx-10 {
   margin: 0 10px;
+}
+
+.d-block {
+  display: block;
+}
+
+.stepper-label {
+  font-size: 1.3rem !important;
+  font-weight: 500;
+}
+
+:host ::ng-deep mat-radio-button label {
+  font-size: 1.15rem !important;
+}
+
+.mt-10 {
+  margin-top: 10px;
 }
