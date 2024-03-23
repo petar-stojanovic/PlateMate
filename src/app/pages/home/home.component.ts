@@ -134,29 +134,37 @@ export class HomeComponent {
   }
 
   submitForm() {
-    console.log(this.goalForm.value);
+    let primaryGoalData = {
+      primaryGoal: this.goalForm.get('primaryGoal')?.value
+    };
+
+    if (this.goalForm.get('primaryGoal')?.value === 'other') {
+      primaryGoalData = {
+        primaryGoal: this.goalForm.get('other')?.value
+      }
+    }
+
+    let dietData = {
+      diet: this.dietaryForm.get('diet')?.value
+    };
+
+    if (this.dietaryForm.get('diet')?.value === 'other') {
+      dietData = {
+        diet: this.dietaryForm.get('other')?.value
+      }
+    }
+
+    console.log(primaryGoalData);
     console.log(this.userDetailsForm.value);
     console.log(this.activityLevelForm.value);
-    console.log(this.dietaryForm.value);
+    console.log(dietData);
     console.log(this.flavorsForm.value);
     console.log(this.mealsPerDayForm.value);
     console.log(this.allergiesForm.value);
     console.log(this.dailyMealCostForm.value);
     console.log(this.additionalConsiderationsForm.value);
 
-    const data = {
-      ...this.goalForm.value,
-      ...this.userDetailsForm.value,
-      ...this.activityLevelForm.value,
-      ...this.dietaryForm.value,
-      ...this.flavorsForm.value,
-      ...this.mealsPerDayForm.value,
-      ...this.allergiesForm.value,
-      ...this.dailyMealCostForm.value,
-      ...this.additionalConsiderationsForm.value
-    };
 
-    console.log(data);
   }
 
   addFlavor(event: MatChipInputEvent): void {
