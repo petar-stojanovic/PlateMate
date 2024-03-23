@@ -156,16 +156,28 @@ export class HomeComponent {
       }
     }
 
-    console.log(primaryGoalData);
-    console.log(this.userDetailsForm.value);
-    console.log(this.activityLevelForm.value);
-    console.log(dietData);
-    console.log(this.flavorsForm.value);
-    console.log(this.mealsPerDayForm.value);
-    console.log(this.allergiesForm.value);
-    console.log(this.dailyMealCostForm.value);
-    console.log(this.additionalConsiderationsForm.value);
+    const data = new Array();
+    data.push(primaryGoalData);
+    data.push(this.userDetailsForm.value);
+    data.push(this.activityLevelForm.value);
+    data.push(dietData);
+    data.push(this.flavorsForm.value);
+    data.push(this.mealsPerDayForm.value);
+    data.push(this.allergiesForm.value);
+    data.push(this.dailyMealCostForm.value);
+    data.push(this.additionalConsiderationsForm.value);
 
+    // console.log(primaryGoalData);
+    // console.log(this.userDetailsForm.value);
+    // console.log(this.activityLevelForm.value);
+    // console.log(dietData);
+    // console.log(this.flavorsForm.value);
+    // console.log(this.mealsPerDayForm.value);
+    // console.log(this.allergiesForm.value);
+    // console.log(this.dailyMealCostForm.value);
+    // console.log(this.additionalConsiderationsForm.value);
+
+    console.log(data);
 
   }
 
