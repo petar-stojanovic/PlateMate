@@ -104,7 +104,7 @@ export class HomeComponent {
 
   initMealsPerDayForm() {
     this.mealsPerDayForm = this.formBuilder.group({
-      mealsPerDay: ['', Validators.required]
+      mealsPerDay: ['3', Validators.required]
     });
   }
 

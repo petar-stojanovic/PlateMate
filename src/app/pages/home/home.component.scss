@@ -45,8 +45,12 @@
   font-size: 1.15rem !important;
 }
 
-:host ::ng-deep mat-radio-group{
-  mat-radio-button{
+:host ::ng-deep mat-select {
+  font-size: 1.15rem !important;
+}
+
+:host ::ng-deep mat-radio-group {
+  mat-radio-button {
     margin: 4px 0;
   }
 }
@@ -56,9 +60,9 @@
 }
 
 
-
 .form-control {
   margin: 10px 0;
+
   span {
     font-weight: 500;
   }

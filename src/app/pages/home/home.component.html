@@ -116,76 +116,106 @@
     <!--      </form>-->
     <!--    </mat-step>-->
 
-    <mat-step [stepControl]="dietaryForm">
-      <form [formGroup]="dietaryForm">
+    <!--    <mat-step [stepControl]="dietaryForm">-->
+    <!--      <form [formGroup]="dietaryForm">-->
+    <!--        <ng-template class="fs-16" matStepLabel>-->
+    <!--          <label class="stepper-label">-->
+    <!--            Dietary Preferences?-->
+    <!--          </label>-->
+    <!--        </ng-template>-->
+
+    <!--        <div class="form-control">-->
+    <!--          <fieldset formGroupName="dietaryRestrictions">-->
+    <!--            <legend>Dietary Restrictions?</legend>-->
+    <!--            <mat-checkbox formControlName="omnivore" value="Omnivore">Omnivore</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="vegetarian" value="Vegetarian">Vegetarian</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="vegan" value="Vegan">Vegan</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="glutenFree" value="Gluten-Free">Gluten-Free</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="dairyFree" value="Dairy-Free">Dairy-Free</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="nutFree" value="Nut-Free">Nut-Free</mat-checkbox>-->
+    <!--            <mat-form-field appearance="fill">-->
+    <!--              <mat-label>Other</mat-label>-->
+    <!--              <input matInput formControlName="other" placeholder="Other">-->
+    <!--            </mat-form-field>-->
+    <!--          </fieldset>-->
+    <!--        </div>-->
+    <!--        <mat-divider></mat-divider>-->
+
+    <!--        <div class="form-control mt-16">-->
+    <!--          <fieldset formGroupName="dietaryPreferences">-->
+    <!--            <legend>Dietary Preferences?</legend>-->
+    <!--            <mat-checkbox formControlName="mediterranean" value="Mediterranean">Mediterranean</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="paleo" value="Paleo">Paleo</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="keto" value="Keto">Keto</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="whole30" value="Whole30">Whole30</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="lowCarb" value="Low-Carb">Low-Carb</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="highProtein" value="High-Protein">High-Protein</mat-checkbox>-->
+    <!--            <mat-form-field appearance="fill">-->
+    <!--              <mat-label>Other</mat-label>-->
+    <!--              <input matInput formControlName="other" placeholder="Other">-->
+    <!--            </mat-form-field>-->
+    <!--          </fieldset>-->
+
+    <!--        </div>-->
+
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
+
+    <!--    <mat-step [stepControl]="flavorsForm">-->
+    <!--      <form [formGroup]="flavorsForm">-->
+    <!--        <ng-template class="fs-16" matStepLabel>-->
+    <!--          <label class="stepper-label">-->
+    <!--            Which flavors do you enjoy the most?-->
+    <!--          </label>-->
+    <!--        </ng-template>-->
+
+    <!--        <div class="form-control">-->
+    <!--          <span>Select all that apply:</span>-->
+    <!--          <section class="mt-16">-->
+    <!--            <mat-checkbox formControlName="sweet" value="Sweet">Sweet</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="spicy" value="Spicy">Spicy</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="savory" value="Savory">Savory</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="sour" value="Sour">Sour</mat-checkbox>-->
+    <!--            <mat-checkbox formControlName="bitter" value="Bitter">Bitter</mat-checkbox>-->
+    <!--            <mat-form-field appearance="fill">-->
+    <!--              <mat-label>Other</mat-label>-->
+    <!--              <input matInput formControlName="other" placeholder="Other">-->
+    <!--            </mat-form-field>-->
+    <!--          </section>-->
+
+    <!--        </div>-->
+
+    <!--        <div class="mt-16">-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>-->
+    <!--          <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </mat-step>-->
+
+    <mat-step [stepControl]="mealsPerDayForm">
+      <form [formGroup]="mealsPerDayForm">
         <ng-template class="fs-16" matStepLabel>
           <label class="stepper-label">
-            Dietary Preferences?
+            How many meals per day do you prefer?
           </label>
         </ng-template>
 
         <div class="form-control">
-          <fieldset formGroupName="dietaryRestrictions">
-            <legend>Dietary Restrictions?</legend>
-            <mat-checkbox formControlName="omnivore" value="Omnivore">Omnivore</mat-checkbox>
-            <mat-checkbox formControlName="vegetarian" value="Vegetarian">Vegetarian</mat-checkbox>
-            <mat-checkbox formControlName="vegan" value="Vegan">Vegan</mat-checkbox>
-            <mat-checkbox formControlName="glutenFree" value="Gluten-Free">Gluten-Free</mat-checkbox>
-            <mat-checkbox formControlName="dairyFree" value="Dairy-Free">Dairy-Free</mat-checkbox>
-            <mat-checkbox formControlName="nutFree" value="Nut-Free">Nut-Free</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Other</mat-label>
-              <input matInput formControlName="other" placeholder="Other">
-            </mat-form-field>
-          </fieldset>
-        </div>
-        <mat-divider></mat-divider>
-
-        <div class="form-control mt-16">
-          <fieldset formGroupName="dietaryPreferences">
-            <legend>Dietary Preferences?</legend>
-            <mat-checkbox formControlName="mediterranean" value="Mediterranean">Mediterranean</mat-checkbox>
-            <mat-checkbox formControlName="paleo" value="Paleo">Paleo</mat-checkbox>
-            <mat-checkbox formControlName="keto" value="Keto">Keto</mat-checkbox>
-            <mat-checkbox formControlName="whole30" value="Whole30">Whole30</mat-checkbox>
-            <mat-checkbox formControlName="lowCarb" value="Low-Carb">Low-Carb</mat-checkbox>
-            <mat-checkbox formControlName="highProtein" value="High-Protein">High-Protein</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Other</mat-label>
-              <input matInput formControlName="other" placeholder="Other">
-            </mat-form-field>
-          </fieldset>
-
-        </div>
-
-        <div class="mt-16">
-          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <mat-step [stepControl]="flavorsForm">
-      <form [formGroup]="flavorsForm">
-        <ng-template class="fs-16" matStepLabel>
-          <label class="stepper-label">
-            Which flavors do you enjoy the most?
-          </label>
-        </ng-template>
-
-        <div class="form-control">
-          <span>Select all that apply:</span>
-          <section class="mt-16">
-            <mat-checkbox formControlName="sweet" value="Sweet">Sweet</mat-checkbox>
-            <mat-checkbox formControlName="spicy" value="Spicy">Spicy</mat-checkbox>
-            <mat-checkbox formControlName="savory" value="Savory">Savory</mat-checkbox>
-            <mat-checkbox formControlName="sour" value="Sour">Sour</mat-checkbox>
-            <mat-checkbox formControlName="bitter" value="Bitter">Bitter</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Other</mat-label>
-              <input matInput formControlName="other" placeholder="Other">
-            </mat-form-field>
-          </section>
+          <span>Choose one:</span>
+          <br>
+          <mat-form-field class="mt-16" subscriptSizing="dynamic">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="mealsPerDay">
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+              <mat-option value="6">6</mat-option>
+            </mat-select>
+          </mat-form-field>
 
         </div>
 
