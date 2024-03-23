@@ -8,7 +8,6 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class HomeComponent {
 
-  goalForms: FormGroup[] = [];
   goalForm!: FormGroup;
   userDetailsForm!: FormGroup;
   activityLevelForm!: FormGroup;
@@ -16,7 +15,7 @@ export class HomeComponent {
   flavorsForm!: FormGroup;
   mealsPerDayForm!: FormGroup;
   allergiesForm!: FormGroup;
-  avoidFoodsForm!: FormGroup;
+  dailyMealCostForm!: FormGroup;
   additionalConsiderationsForm!: FormGroup;
 
 
@@ -29,27 +28,26 @@ export class HomeComponent {
     this.initFlavorsForm();
     this.initMealsPerDayForm();
     this.initAllergiesForm();
-    this.initAvoidFoodsForm();
+    this.initDailyMealCostForm();
     this.initAdditionalConsiderationsForm();
 
-
-    this.goalForms.push(this.formBuilder.group({
-      goal: ['', Validators.required],
-    }))
-
-    this.goalForms.push(this.formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    }));
-
-    console.log(this.goalForms)
   }
 
-  //TODO change following methods
+
   initGoalForm() {
     this.goalForm = this.formBuilder.group({
       primaryGoal: ['', Validators.required],
-    });
+      other: [''],
+    }, {validator: this.customValidator});
   }
+
+  customValidator(group: FormGroup) {
+    if (group.get('primaryGoal')?.value === 'Other') {
+      return group.get('other')?.value ? null : {'required': true};
+    }
+    return null;
+  }
+
 
   initGenderForm() {
     this.userDetailsForm = this.formBuilder.group({
@@ -120,22 +118,16 @@ export class HomeComponent {
     });
   }
 
-  initAvoidFoodsForm() {
-    this.avoidFoodsForm = this.formBuilder.group({
-      seafood: [false],
-      redMeat: [false],
-      pork: [false],
-      eggs: [false],
-      specificVegetablesFruits: [''],
-      other: ['']
+
+  initDailyMealCostForm() {
+    this.dailyMealCostForm = this.formBuilder.group({
+      price: ['', Validators.required],
     });
   }
 
   initAdditionalConsiderationsForm() {
     this.additionalConsiderationsForm = this.formBuilder.group({
-      dailyCost: ['', Validators.required],
-      culinarySkills: ['', Validators.required],
-      additionalInformation: ['']
+      text: ['']
     });
   }
 
