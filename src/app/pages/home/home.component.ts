@@ -110,12 +110,13 @@ export class HomeComponent {
 
   initAllergiesForm() {
     this.allergiesForm = this.formBuilder.group({
-      gluten: [false],
-      dairy: [false],
+      milk: [false],
+      eggs: [false],
+      fish: [false],
       nuts: [false],
-      shellfish: [false],
-      soy: [false],
-      otherAllergy: ['']
+      wheat: [false],
+      sesame: [false],
+      other: ['']
     });
   }
 
@@ -126,7 +127,7 @@ export class HomeComponent {
       pork: [false],
       eggs: [false],
       specificVegetablesFruits: [''],
-      otherAvoidance: ['']
+      other: ['']
     });
   }
 
