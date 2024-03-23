@@ -165,5 +165,36 @@
       </form>
     </mat-step>
 
+    <mat-step [stepControl]="flavorsForm">
+      <form [formGroup]="flavorsForm">
+        <ng-template class="fs-16" matStepLabel>
+          <label class="stepper-label">
+            Which flavors do you enjoy the most?
+          </label>
+        </ng-template>
+
+        <div class="form-control">
+          <span>Select all that apply:</span>
+          <section class="mt-16">
+            <mat-checkbox formControlName="sweet" value="Sweet">Sweet</mat-checkbox>
+            <mat-checkbox formControlName="spicy" value="Spicy">Spicy</mat-checkbox>
+            <mat-checkbox formControlName="savory" value="Savory">Savory</mat-checkbox>
+            <mat-checkbox formControlName="sour" value="Sour">Sour</mat-checkbox>
+            <mat-checkbox formControlName="bitter" value="Bitter">Bitter</mat-checkbox>
+            <mat-form-field appearance="fill">
+              <mat-label>Other</mat-label>
+              <input matInput formControlName="other" placeholder="Other">
+            </mat-form-field>
+          </section>
+
+        </div>
+
+        <div class="mt-16">
+          <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" class="mx-10" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
   </mat-stepper>
 </div>

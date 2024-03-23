@@ -98,7 +98,7 @@ export class HomeComponent {
       savory: [false],
       sour: [false],
       bitter: [false],
-      otherFlavor: ['']
+      other: ['']
     });
   }
 
