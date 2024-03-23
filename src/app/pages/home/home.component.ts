@@ -129,7 +129,7 @@ export class HomeComponent {
 
   initAdditionalConsiderationsForm() {
     this.additionalConsiderationsForm = this.formBuilder.group({
-      text: ['']
+      information: ['']
     });
   }
 
@@ -173,6 +173,7 @@ export class HomeComponent {
 
     if (index >= 0) {
       this.flavors.splice(index, 1);
+      this.flavorsForm.get('flavorsList')?.setValue(this.flavors.map(f => f.name));
     }
   }
 
@@ -190,6 +191,7 @@ export class HomeComponent {
 
     if (index >= 0) {
       this.allergies.splice(index, 1);
+      this.allergiesForm.get('allergyList')?.setValue(this.allergies.map(f => f.name));
     }
   }
 }
