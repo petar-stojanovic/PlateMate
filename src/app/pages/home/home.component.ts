@@ -55,7 +55,9 @@ export class HomeComponent {
     this.userDetailsForm = this.formBuilder.group({
       gender: ['male', Validators.required],
       weight: ['', Validators.required],
+      weightMeasurement: ['kgs', Validators.required],
       height: ['', Validators.required],
+      heightMeasurement: ['cm', Validators.required],
       age: ['', [Validators.required, Validators.min(1)]]
     });
   }

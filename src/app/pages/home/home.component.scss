@@ -12,8 +12,24 @@
   box-shadow: 0 0 10px 1px #999999;
 }
 
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
 .mx-10 {
   margin: 0 10px;
+}
+
+.my-10 {
+  margin: 10px 0;
 }
 
 .d-block {
@@ -22,13 +38,26 @@
 
 .stepper-label {
   font-size: 1.3rem !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-:host ::ng-deep mat-radio-button label {
+:host ::ng-deep mat-radio-button label, form div {
   font-size: 1.15rem !important;
 }
 
-.mt-10 {
-  margin-top: 10px;
+.mt-16 {
+  margin-top: 16px;
+}
+
+
+
+.form-control {
+  margin: 10px 0;
+  span {
+    font-weight: 500;
+  }
+}
+
+:host ::ng-deep .mat-vertical-content-container {
+  margin-right: 36px !important;
 }

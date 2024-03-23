@@ -22,6 +22,7 @@ import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} f
 import {MatInput} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
+import {MatOption, MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
     MatStepperPrevious,
     MatStepperNext,
     MatRadioGroup,
-    MatRadioButton
+    MatRadioButton,
+    MatSelect,
+    MatOption
   ],
   providers: [
     provideAnimationsAsync(),
