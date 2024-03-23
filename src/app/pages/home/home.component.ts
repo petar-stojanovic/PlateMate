@@ -38,11 +38,11 @@ export class HomeComponent {
     this.goalForm = this.formBuilder.group({
       primaryGoal: ['', Validators.required],
       other: [''],
-    }, {validator: this.customValidator});
+    }, {validator: this.customGoalFormValidator});
   }
 
-  customValidator(group: FormGroup) {
-    if (group.get('primaryGoal')?.value === 'Other') {
+  customGoalFormValidator(group: FormGroup) {
+    if (group.get('primaryGoal')?.value === 'other') {
       return group.get('other')?.value ? null : {'required': true};
     }
     return null;
@@ -52,11 +52,11 @@ export class HomeComponent {
   initGenderForm() {
     this.userDetailsForm = this.formBuilder.group({
       gender: ['male', Validators.required],
-      weight: ['', Validators.required],
+      weight: ['100', Validators.required],
       weightMeasurement: ['kgs', Validators.required],
-      height: ['', Validators.required],
+      height: ['175', Validators.required],
       heightMeasurement: ['cm', Validators.required],
-      age: ['', [Validators.required, Validators.min(1)]]
+      age: ['22', [Validators.required, Validators.min(1)]]
     });
   }
 
@@ -68,25 +68,29 @@ export class HomeComponent {
 
   initDietaryPreferencesForm() {
     this.dietaryForm = this.formBuilder.group({
-      dietaryRestrictions: this.formBuilder.group({
-        omnivore: [false],
-        vegetarian: [false],
-        vegan: [false],
-        glutenFree: [false],
-        dairyFree: [false],
-        nutFree: [false],
-        other: ['']
-      }),
-      dietaryPreferences: this.formBuilder.group({
-        mediterranean: [false],
-        paleo: [false],
-        keto: [false],
-        whole30: [false],
-        lowCarb: [false],
-        highProtein: [false],
-        other: ['']
-      })
-    });
+      diet: ['Omnivore', [Validators.required]],
+      other: [''],
+      // dietaryRestrictions: this.formBuilder.group({
+      //   diet: ['', [Validators.required]],
+      //   other: ['']
+      // }),
+      // dietaryPreferences: this.formBuilder.group({
+      //   mediterranean: [false],
+      //   paleo: [false],
+      //   keto: [false],
+      //   whole30: [false],
+      //   lowCarb: [false],
+      //   highProtein: [false],
+      //   other: ['']
+      // })
+    }, {validator: this.customDietaryPreferenceGoalValidator});
+  }
+
+  customDietaryPreferenceGoalValidator(group: FormGroup) {
+    if (group.get('diet')?.value === 'other') {
+      return group.get('other')?.value ? null : {'required': true};
+    }
+    return null;
   }
 
   initFlavorsForm() {
@@ -121,7 +125,7 @@ export class HomeComponent {
 
   initDailyMealCostForm() {
     this.dailyMealCostForm = this.formBuilder.group({
-      price: ['', Validators.required],
+      price: ['Less than $10', Validators.required],
     });
   }
 
@@ -129,6 +133,32 @@ export class HomeComponent {
     this.additionalConsiderationsForm = this.formBuilder.group({
       text: ['']
     });
+  }
+
+  submitForm() {
+    console.log(this.goalForm.value);
+    console.log(this.userDetailsForm.value);
+    console.log(this.activityLevelForm.value);
+    console.log(this.dietaryForm.value);
+    console.log(this.flavorsForm.value);
+    console.log(this.mealsPerDayForm.value);
+    console.log(this.allergiesForm.value);
+    console.log(this.dailyMealCostForm.value);
+    console.log(this.additionalConsiderationsForm.value);
+
+    const data = {
+      ...this.goalForm.value,
+      ...this.userDetailsForm.value,
+      ...this.activityLevelForm.value,
+      ...this.dietaryForm.value,
+      ...this.flavorsForm.value,
+      ...this.mealsPerDayForm.value,
+      ...this.allergiesForm.value,
+      ...this.dailyMealCostForm.value,
+      ...this.additionalConsiderationsForm.value
+    };
+
+    console.log(data);
   }
 
 }
