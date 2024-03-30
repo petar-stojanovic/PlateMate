@@ -311,7 +311,7 @@
 
           <mat-form-field class="w-100">
             <mat-label>Additional information</mat-label>
-            <textarea matInput formControlName="information" placeholder="Additional Information"></textarea>
+            <textarea matInput formControlName="additionalInformation" placeholder="Additional Information"></textarea>
           </mat-form-field>
         </div>
 
@@ -324,4 +324,10 @@
     </mat-step>
 
   </mat-stepper>
+
+  <div>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+    <pre style="max-width:  98vw;">{{ aiResponse }}</pre>
+  </div>
 </div>

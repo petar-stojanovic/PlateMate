@@ -15,6 +15,9 @@ export class HomeComponent {
   flavors = [{name: 'Sweet'}, {name: 'Spicy'}, {name: 'Crunchy'}];
   allergies = [{name: 'Milk'}, {name: 'Oats'}];
 
+  aiResponse: any;
+
+  isLoading = false;
 
   goalForm!: FormGroup;
   userDetailsForm!: FormGroup;
@@ -131,55 +134,10 @@ export class HomeComponent {
 
   initAdditionalConsiderationsForm() {
     this.additionalConsiderationsForm = this.formBuilder.group({
-      information: ['']
+      additionalInformation: ['']
     });
   }
 
-  submitForm() {
-    let primaryGoalData = {
-      primaryGoal: this.goalForm.get('primaryGoal')?.value
-    };
-
-    if (this.goalForm.get('primaryGoal')?.value === 'other') {
-      primaryGoalData = {
-        primaryGoal: this.goalForm.get('other')?.value
-      }
-    }
-
-    let dietData = {
-      diet: this.dietaryForm.get('diet')?.value
-    };
-
-    if (this.dietaryForm.get('diet')?.value === 'other') {
-      dietData = {
-        diet: this.dietaryForm.get('other')?.value
-      }
-    }
-
-    const data = new Array();
-    data.push(primaryGoalData);
-    data.push(this.userDetailsForm.value);
-    data.push(this.activityLevelForm.value);
-    data.push(dietData);
-    data.push(this.flavorsForm.value);
-    data.push(this.mealsPerDayForm.value);
-    data.push(this.allergiesForm.value);
-    data.push(this.dailyMealCostForm.value);
-    data.push(this.additionalConsiderationsForm.value);
-
-    // console.log(primaryGoalData);
-    // console.log(this.userDetailsForm.value);
-    // console.log(this.activityLevelForm.value);
-    // console.log(dietData);
-    // console.log(this.flavorsForm.value);
-    // console.log(this.mealsPerDayForm.value);
-    // console.log(this.allergiesForm.value);
-    // console.log(this.dailyMealCostForm.value);
-    // console.log(this.additionalConsiderationsForm.value);
-
-    console.log(data);
-
-  }
 
   addFlavor(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -215,5 +173,57 @@ export class HomeComponent {
       this.allergies.splice(index, 1);
       this.allergiesForm.get('allergyList')?.setValue(this.allergies.map(f => f.name));
     }
+  }
+
+  async submitForm() {
+    let primaryGoalData = {
+      primaryGoal: this.goalForm.get('primaryGoal')?.value
+    };
+
+    if (this.goalForm.get('primaryGoal')?.value === 'other') {
+      primaryGoalData = {
+        primaryGoal: this.goalForm.get('other')?.value
+      }
+    }
+
+    let dietData = {
+      diet: this.dietaryForm.get('diet')?.value
+    };
+
+    if (this.dietaryForm.get('diet')?.value === 'other') {
+      dietData = {
+        diet: this.dietaryForm.get('other')?.value
+      }
+    }
+
+    const data = [];
+    data.push(primaryGoalData);
+    data.push(this.userDetailsForm.value);
+    data.push(this.activityLevelForm.value);
+    data.push(dietData);
+    data.push(this.flavorsForm.value);
+    data.push(this.mealsPerDayForm.value);
+    data.push(this.allergiesForm.value);
+    data.push(this.dailyMealCostForm.value);
+    data.push(this.additionalConsiderationsForm.value);
+
+    console.log(data);
+
+    this.isLoading = true;
+
+    const stream = await this.aiService.generate(data)
+
+
+    for await (const chunk of stream) {
+      const aiResponse = chunk.choices[0].delta.content || '';
+      console.log(aiResponse)
+      if (aiResponse !== undefined || aiResponse !== "undefined") {
+        this.aiResponse += aiResponse;
+      }
+      console.log(this.aiResponse)
+    }
+    this.isLoading = true
+
+
   }
 }
