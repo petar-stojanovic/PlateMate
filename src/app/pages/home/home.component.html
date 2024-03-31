@@ -327,7 +327,7 @@
   </mat-stepper>
 
 
-<!--  @if (isSubmitted) {-->
+  @if (isSubmitted) {
     @if (aiResponse) {
       @for (meal of aiResponse.meals; track meal) {
         <app-meal-info [meal]="meal"></app-meal-info>
@@ -338,6 +338,6 @@
       <!-- Loading -->
       <mat-spinner *ngIf="isLoading" class="m-auto"></mat-spinner>
     }
-<!--  }-->
+  }
 
 </div>

@@ -16,161 +16,161 @@ export class HomeComponent {
   flavors = [{name: 'Sweet'}, {name: 'Spicy'}, {name: 'Crunchy'}];
   allergies = [{name: 'Milk'}, {name: 'Oats'}];
 
-  // aiResponse: AiResponse | null = null;
-  aiResponse: AiResponse | null = {
-    "meals": [
-      {
-        "meal_time": "Breakfast",
-        "recipe_name": "Greek Yogurt Parfait",
-        "description": "A light and refreshing breakfast option with layers of Greek yogurt, fresh berries, and crunchy granola.",
-        "ingredients": [
-          {
-            "ingredient": "Greek yogurt",
-            "amount": "1 cup"
-          },
-          {
-            "ingredient": "Mixed berries",
-            "amount": "1/2 cup"
-          },
-          {
-            "ingredient": "Granola",
-            "amount": "1/4 cup"
-          },
-          {
-            "ingredient": "Honey",
-            "amount": "1 tbsp"
-          }
-        ],
-        "categories": [
-          "Healthy",
-          "Quick & Easy",
-          "Breakfast"
-        ],
-        "nutritional_info": {
-          "calories": 250,
-          "protein": "15g",
-          "carbohydrates": "40g",
-          "fats": "5g",
-          "sugar": "20g",
-          "fiber": "6g"
-        },
-        "preparation_instructions": [
-          "In a glass or bowl, layer Greek yogurt, mixed berries, and granola.",
-          "Drizzle honey on top for added sweetness.",
-          "Enjoy this crunchy and satisfying parfait!"
-        ],
-        "estimated_cost": "$5 - $8",
-        "time_to_prepare": "5 minutes",
-        "servings": 1
-      },
-      {
-        "meal_time": "Lunch",
-        "recipe_name": "Grilled Chicken Salad",
-        "description": "A hearty and protein-packed salad with grilled chicken, mixed greens, crunchy vegetables, and a zesty vinaigrette.",
-        "ingredients": [
-          {
-            "ingredient": "Grilled chicken breast",
-            "amount": "4 oz"
-          },
-          {
-            "ingredient": "Mixed greens",
-            "amount": "2 cups"
-          },
-          {
-            "ingredient": "Cherry tomatoes",
-            "amount": "1/2 cup"
-          },
-          {
-            "ingredient": "Cucumber",
-            "amount": "1/2"
-          },
-          {
-            "ingredient": "Bell pepper",
-            "amount": "1/2"
-          },
-          {
-            "ingredient": "Vinaigrette dressing",
-            "amount": "2 tbsp"
-          }
-        ],
-        "categories": [
-          "Protein-rich",
-          "Salad",
-          "Lunch"
-        ],
-        "nutritional_info": {
-          "calories": 350,
-          "protein": "30g",
-          "carbohydrates": "15g",
-          "fats": "18g",
-          "sugar": "8g",
-          "fiber": "5g"
-        },
-        "preparation_instructions": [
-          "In a large bowl, combine mixed greens, cherry tomatoes, cucumber, and bell pepper.",
-          "Top with grilled chicken breast slices.",
-          "Drizzle vinaigrette dressing over the salad and toss gently to combine."
-        ],
-        "estimated_cost": "$12 - $15",
-        "time_to_prepare": "15 minutes",
-        "servings": 1
-      },
-      {
-        "meal_time": "Dinner",
-        "recipe_name": "Baked Salmon with Roasted Vegetables",
-        "description": "A flavorful and nutritious dinner option featuring oven-baked salmon fillet served with a side of assorted roasted vegetables.",
-        "ingredients": [
-          {
-            "ingredient": "Salmon fillet",
-            "amount": "6 oz"
-          },
-          {
-            "ingredient": "Broccoli florets",
-            "amount": "1 cup"
-          },
-          {
-            "ingredient": "Carrot sticks",
-            "amount": "1/2 cup"
-          },
-          {
-            "ingredient": "Red bell pepper",
-            "amount": "1/2"
-          },
-          {
-            "ingredient": "Olive oil",
-            "amount": "1 tbsp"
-          },
-          {
-            "ingredient": "Lemon wedges",
-            "amount": "2"
-          }
-        ],
-        "categories": [
-          "Omega-3-rich",
-          "Dinner",
-          "Low carb"
-        ],
-        "nutritional_info": {
-          "calories": 400,
-          "protein": "28g",
-          "carbohydrates": "20g",
-          "fats": "22g",
-          "sugar": "8g",
-          "fiber": "6g"
-        },
-        "preparation_instructions": [
-          "Preheat the oven to 400°F (200°C).",
-          "Place salmon fillet on a baking sheet and surround it with broccoli, carrot, and red bell pepper.",
-          "Drizzle olive oil over the salmon and vegetables, season with salt and pepper.",
-          "Bake for 15-20 minutes until the salmon is cooked through and vegetables are tender.",
-          "Serve with lemon wedges on the side."
-        ],
-        "estimated_cost": "$18 - $25",
-        "time_to_prepare": "25 minutes",
-        "servings": 1
-      }
-    ]
-  };
+  aiResponse: AiResponse | null = null;
+  // aiResponse: AiResponse | null = {
+  //   "meals": [
+  //     {
+  //       "meal_time": "Breakfast",
+  //       "recipe_name": "Greek Yogurt Parfait",
+  //       "description": "A light and refreshing breakfast option with layers of Greek yogurt, fresh berries, and crunchy granola.",
+  //       "ingredients": [
+  //         {
+  //           "ingredient": "Greek yogurt",
+  //           "amount": "1 cup"
+  //         },
+  //         {
+  //           "ingredient": "Mixed berries",
+  //           "amount": "1/2 cup"
+  //         },
+  //         {
+  //           "ingredient": "Granola",
+  //           "amount": "1/4 cup"
+  //         },
+  //         {
+  //           "ingredient": "Honey",
+  //           "amount": "1 tbsp"
+  //         }
+  //       ],
+  //       "categories": [
+  //         "Healthy",
+  //         "Quick & Easy",
+  //         "Breakfast"
+  //       ],
+  //       "nutritional_info": {
+  //         "calories": 250,
+  //         "protein": "15g",
+  //         "carbohydrates": "40g",
+  //         "fats": "5g",
+  //         "sugar": "20g",
+  //         "fiber": "6g"
+  //       },
+  //       "preparation_instructions": [
+  //         "In a glass or bowl, layer Greek yogurt, mixed berries, and granola.",
+  //         "Drizzle honey on top for added sweetness.",
+  //         "Enjoy this crunchy and satisfying parfait!"
+  //       ],
+  //       "estimated_cost": "$5 - $8",
+  //       "time_to_prepare": "5 minutes",
+  //       "servings": 1
+  //     },
+  //     {
+  //       "meal_time": "Lunch",
+  //       "recipe_name": "Grilled Chicken Salad",
+  //       "description": "A hearty and protein-packed salad with grilled chicken, mixed greens, crunchy vegetables, and a zesty vinaigrette.",
+  //       "ingredients": [
+  //         {
+  //           "ingredient": "Grilled chicken breast",
+  //           "amount": "4 oz"
+  //         },
+  //         {
+  //           "ingredient": "Mixed greens",
+  //           "amount": "2 cups"
+  //         },
+  //         {
+  //           "ingredient": "Cherry tomatoes",
+  //           "amount": "1/2 cup"
+  //         },
+  //         {
+  //           "ingredient": "Cucumber",
+  //           "amount": "1/2"
+  //         },
+  //         {
+  //           "ingredient": "Bell pepper",
+  //           "amount": "1/2"
+  //         },
+  //         {
+  //           "ingredient": "Vinaigrette dressing",
+  //           "amount": "2 tbsp"
+  //         }
+  //       ],
+  //       "categories": [
+  //         "Protein-rich",
+  //         "Salad",
+  //         "Lunch"
+  //       ],
+  //       "nutritional_info": {
+  //         "calories": 350,
+  //         "protein": "30g",
+  //         "carbohydrates": "15g",
+  //         "fats": "18g",
+  //         "sugar": "8g",
+  //         "fiber": "5g"
+  //       },
+  //       "preparation_instructions": [
+  //         "In a large bowl, combine mixed greens, cherry tomatoes, cucumber, and bell pepper.",
+  //         "Top with grilled chicken breast slices.",
+  //         "Drizzle vinaigrette dressing over the salad and toss gently to combine."
+  //       ],
+  //       "estimated_cost": "$12 - $15",
+  //       "time_to_prepare": "15 minutes",
+  //       "servings": 1
+  //     },
+  //     {
+  //       "meal_time": "Dinner",
+  //       "recipe_name": "Baked Salmon with Roasted Vegetables",
+  //       "description": "A flavorful and nutritious dinner option featuring oven-baked salmon fillet served with a side of assorted roasted vegetables.",
+  //       "ingredients": [
+  //         {
+  //           "ingredient": "Salmon fillet",
+  //           "amount": "6 oz"
+  //         },
+  //         {
+  //           "ingredient": "Broccoli florets",
+  //           "amount": "1 cup"
+  //         },
+  //         {
+  //           "ingredient": "Carrot sticks",
+  //           "amount": "1/2 cup"
+  //         },
+  //         {
+  //           "ingredient": "Red bell pepper",
+  //           "amount": "1/2"
+  //         },
+  //         {
+  //           "ingredient": "Olive oil",
+  //           "amount": "1 tbsp"
+  //         },
+  //         {
+  //           "ingredient": "Lemon wedges",
+  //           "amount": "2"
+  //         }
+  //       ],
+  //       "categories": [
+  //         "Omega-3-rich",
+  //         "Dinner",
+  //         "Low carb"
+  //       ],
+  //       "nutritional_info": {
+  //         "calories": 400,
+  //         "protein": "28g",
+  //         "carbohydrates": "20g",
+  //         "fats": "22g",
+  //         "sugar": "8g",
+  //         "fiber": "6g"
+  //       },
+  //       "preparation_instructions": [
+  //         "Preheat the oven to 400°F (200°C).",
+  //         "Place salmon fillet on a baking sheet and surround it with broccoli, carrot, and red bell pepper.",
+  //         "Drizzle olive oil over the salmon and vegetables, season with salt and pepper.",
+  //         "Bake for 15-20 minutes until the salmon is cooked through and vegetables are tender.",
+  //         "Serve with lemon wedges on the side."
+  //       ],
+  //       "estimated_cost": "$18 - $25",
+  //       "time_to_prepare": "25 minutes",
+  //       "servings": 1
+  //     }
+  //   ]
+  // };
 
   isLoading = false;
   isSubmitted = false;
