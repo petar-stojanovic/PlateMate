@@ -10,7 +10,7 @@ export class AiService {
 
   constructor() {
     this.openai = new OpenAI({
-      // apiKey: "",
+      apiKey: "",
       dangerouslyAllowBrowser: true
     });
   }

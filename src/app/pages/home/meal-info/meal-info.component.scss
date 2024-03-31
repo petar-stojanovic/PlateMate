@@ -1,4 +1,22 @@
+* {
+  font-size: 1rem;
+}
 
 .w-40 {
   width: 40rem;
+}
+
+.recipe-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.25rem;
+  font-family: cursive;
+  line-height: 3rem;
+}
+
+.ingredients, .nutritional-information, .preparation-instruction {
+  font-weight: 600;
+  font-size: 1.75rem;
+  font-family: cursive;
+  line-height: 2.25rem;
 }

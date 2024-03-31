@@ -4,6 +4,7 @@ export const responseFormat = `
         {
             "meal_time": "Breakfast" | "Lunch" | "Dinner" | "Snack",
             "recipe_name": string,
+            "description": "string // Description of the meal in 2-3 sentences.",
             "ingredients": [
               {"ingredient": string, "amount": string},
               ...

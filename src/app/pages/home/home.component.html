@@ -331,6 +331,10 @@
     @if (aiResponse) {
       @for (meal of aiResponse.meals; track meal) {
         <app-meal-info [meal]="meal"></app-meal-info>
+
+        @if (!$last) {
+          <hr class="w-40">
+        }
       }
     } @else {
       <!-- Loading -->

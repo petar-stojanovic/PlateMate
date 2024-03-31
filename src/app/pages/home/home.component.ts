@@ -22,6 +22,7 @@ export class HomeComponent {
       {
         "meal_time": "Breakfast",
         "recipe_name": "Spicy Veggie Omelette",
+        "description": "A flavorful and protein-rich omelette with bell peppers, onions, tomatoes, spinach, and cheese, seasoned with chili flakes.",
         "ingredients": [
           {
             "ingredient": "Eggs",
@@ -79,6 +80,7 @@ export class HomeComponent {
       {
         "meal_time": "Lunch",
         "recipe_name": "Grilled Chicken Salad",
+        "description": "A refreshing and protein-packed salad with grilled chicken breast, fresh vegetables, and a zesty dressing.",
         "ingredients": [
           {
             "ingredient": "Chicken breast",
@@ -143,6 +145,7 @@ export class HomeComponent {
       {
         "meal_time": "Dinner",
         "recipe_name": "Spicy Turkey Stir-Fry",
+        "description": "A quick and easy stir-fry recipe with ground turkey and colorful vegetables, seasoned with soy sauce and sriracha sauce.",
         "ingredients": [
           {
             "ingredient": "Ground turkey",
@@ -208,6 +211,7 @@ export class HomeComponent {
       {
         "meal_time": "Snack",
         "recipe_name": "Spicy Roasted Chickpeas",
+        "description": "A crunchy and flavorful snack that is high in protein and fiber. Perfect for satisfying your mid-day cravings.",
         "ingredients": [
           {
             "ingredient": "Canned chickpeas",
@@ -269,6 +273,8 @@ export class HomeComponent {
 
   constructor(private formBuilder: FormBuilder,
               private aiService: AiService) {
+
+    console.log(this.aiResponse);
 
     this.initGoalForm();
     this.initGenderForm();

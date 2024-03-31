@@ -1,29 +1,29 @@
 <div class="w-40">
 
-  <h2>{{ meal.meal_time }}</h2>
-  <h3>{{ meal.recipe_name }}</h3>
+  <h2 class="meal-time">{{ meal.meal_time }}</h2>
+  <h3 class="recipe-name">{{ meal.recipe_name }}</h3>
+  <p class="description">{{ meal.description }}</p>
   <p>Estimated Cost: {{ meal.estimated_cost }}</p>
 
-  <h4>Ingredients</h4>
+  <h4 class="ingredients">Ingredients</h4>
   <ul>
     <li *ngFor="let ingredient of meal.ingredients">
       {{ ingredient.amount }} {{ ingredient.ingredient }}
     </li>
   </ul>
 
-  <h4>Nutritional Information</h4>
+  <h4 class="nutritional-information">Nutritional Information</h4>
   <p>Calories: {{ meal.nutritional_info.calories }}</p>
   <p>Protein: {{ meal.nutritional_info.protein }}</p>
   <p>Carbohydrates: {{ meal.nutritional_info.carbohydrates }}</p>
   <p>Fats: {{ meal.nutritional_info.fats }}</p>
   <p>Sugar: {{ meal.nutritional_info.sugar }}</p>
 
-  <h4>Preparation Instructions</h4>
+  <h4 class="preparation-instruction">Preparation Instructions</h4>
   <ul>
     <li *ngFor="let instruction of meal.preparation_instructions; let i = index">
       Step {{ i + 1 }}: {{ instruction }}
     </li>
   </ul>
 
-  <hr>
 </div>

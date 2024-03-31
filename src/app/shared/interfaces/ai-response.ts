@@ -5,6 +5,7 @@ export interface AiResponse {
 export interface Meal {
   meal_time: string
   recipe_name: string
+  description: string
   ingredients: Ingredient[]
   nutritional_info: NutritionalInfo
   preparation_instructions: string[]
