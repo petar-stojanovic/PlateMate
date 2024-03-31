@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {MatChipEditedEvent, MatChipInputEvent} from "@angular/material/chips";
 import {AiService} from "../../services/ai.service";
+import {AiResponse} from "../../shared/interfaces/ai-response";
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,245 @@ export class HomeComponent {
   flavors = [{name: 'Sweet'}, {name: 'Spicy'}, {name: 'Crunchy'}];
   allergies = [{name: 'Milk'}, {name: 'Oats'}];
 
-  aiResponse: any;
+  // aiResponse: AiResponse | null = null;
+  aiResponse: AiResponse | null = {
+    meals: [
+      {
+        "meal_time": "Breakfast",
+        "recipe_name": "Spicy Veggie Omelette",
+        "ingredients": [
+          {
+            "ingredient": "Eggs",
+            "amount": "2"
+          },
+          {
+            "ingredient": "Bell peppers",
+            "amount": "1/2 cup, chopped"
+          },
+          {
+            "ingredient": "Onions",
+            "amount": "1/4 cup, chopped"
+          },
+          {
+            "ingredient": "Tomatoes",
+            "amount": "1/4 cup, chopped"
+          },
+          {
+            "ingredient": "Spinach",
+            "amount": "1/2 cup"
+          },
+          {
+            "ingredient": "Cheese",
+            "amount": "2 tbsp"
+          },
+          {
+            "ingredient": "Chili flakes",
+            "amount": "1 tsp"
+          },
+          {
+            "ingredient": "Salt",
+            "amount": "to taste"
+          },
+          {
+            "ingredient": "Black pepper",
+            "amount": "to taste"
+          }
+        ],
+        "nutritional_info": {
+          "calories": 350,
+          "protein": "25g",
+          "carbohydrates": "10g",
+          "fats": "20g",
+          "sugar": "5g"
+        },
+        "preparation_instructions": [
+          "Beat the eggs in a bowl and season with salt and pepper.",
+          "Heat a non-stick pan and add bell peppers, onions, and tomatoes. Cook for 2 minutes.",
+          "Add spinach and chili flakes, cook for another minute.",
+          "Pour the beaten eggs over the veggies in the pan. Sprinkle cheese on top.",
+          "Cook until the omelette is set. Fold in half and serve hot."
+        ],
+        "estimated_cost": "$8"
+      },
+      {
+        "meal_time": "Lunch",
+        "recipe_name": "Grilled Chicken Salad",
+        "ingredients": [
+          {
+            "ingredient": "Chicken breast",
+            "amount": "1"
+          },
+          {
+            "ingredient": "Lettuce",
+            "amount": "2 cups"
+          },
+          {
+            "ingredient": "Cherry tomatoes",
+            "amount": "1/2 cup"
+          },
+          {
+            "ingredient": "Cucumbers",
+            "amount": "1/2 cup, sliced"
+          },
+          {
+            "ingredient": "Red onions",
+            "amount": "2 tbsp, thinly sliced"
+          },
+          {
+            "ingredient": "Olive oil",
+            "amount": "1 tbsp"
+          },
+          {
+            "ingredient": "Lemon juice",
+            "amount": "1 tbsp"
+          },
+          {
+            "ingredient": "Garlic powder",
+            "amount": "1/2 tsp"
+          },
+          {
+            "ingredient": "Paprika",
+            "amount": "1/2 tsp"
+          },
+          {
+            "ingredient": "Salt",
+            "amount": "to taste"
+          },
+          {
+            "ingredient": "Black pepper",
+            "amount": "to taste"
+          }
+        ],
+        "nutritional_info": {
+          "calories": 400,
+          "protein": "30g",
+          "carbohydrates": "15g",
+          "fats": "25g",
+          "sugar": "5g"
+        },
+        "preparation_instructions": [
+          "Season the chicken breast with garlic powder, paprika, salt, and black pepper. Grill until cooked through.",
+          "In a bowl, combine lettuce, cherry tomatoes, cucumbers, and red onions.",
+          "Slice the grilled chicken and add to the salad.",
+          "Drizzle olive oil and lemon juice over the salad. Toss well before serving."
+        ],
+        "estimated_cost": "$12"
+      },
+      {
+        "meal_time": "Dinner",
+        "recipe_name": "Spicy Turkey Stir-Fry",
+        "ingredients": [
+          {
+            "ingredient": "Ground turkey",
+            "amount": "200g"
+          },
+          {
+            "ingredient": "Broccoli",
+            "amount": "1 cup, chopped"
+          },
+          {
+            "ingredient": "Bell peppers",
+            "amount": "1/2 cup, sliced"
+          },
+          {
+            "ingredient": "Carrots",
+            "amount": "1/2 cup, sliced"
+          },
+          {
+            "ingredient": "Soy sauce",
+            "amount": "2 tbsp"
+          },
+          {
+            "ingredient": "Sriracha sauce",
+            "amount": "1 tbsp"
+          },
+          {
+            "ingredient": "Garlic",
+            "amount": "2 cloves, minced"
+          },
+          {
+            "ingredient": "Ginger",
+            "amount": "1 tsp, grated"
+          },
+          {
+            "ingredient": "Cooking oil",
+            "amount": "1 tbsp"
+          },
+          {
+            "ingredient": "Salt",
+            "amount": "to taste"
+          },
+          {
+            "ingredient": "Black pepper",
+            "amount": "to taste"
+          }
+        ],
+        "nutritional_info": {
+          "calories": 450,
+          "protein": "35g",
+          "carbohydrates": "20g",
+          "fats": "22g",
+          "sugar": "8g"
+        },
+        "preparation_instructions": [
+          "Heat oil in a pan, add minced garlic and ginger. Saute until fragrant.",
+          "Add ground turkey and cook until browned.",
+          "Stir in soy sauce and sriracha sauce.",
+          "Add vegetables and cook until tender-crisp.",
+          "Season with salt and black pepper. Serve hot."
+        ],
+        "estimated_cost": "$15"
+      },
+      {
+        "meal_time": "Snack",
+        "recipe_name": "Spicy Roasted Chickpeas",
+        "ingredients": [
+          {
+            "ingredient": "Canned chickpeas",
+            "amount": "1 can (400g), drained and rinsed"
+          },
+          {
+            "ingredient": "Olive oil",
+            "amount": "1 tbsp"
+          },
+          {
+            "ingredient": "Cayenne pepper",
+            "amount": "1/2 tsp"
+          },
+          {
+            "ingredient": "Cumin",
+            "amount": "1/2 tsp"
+          },
+          {
+            "ingredient": "Paprika",
+            "amount": "1/2 tsp"
+          },
+          {
+            "ingredient": "Salt",
+            "amount": "to taste"
+          }
+        ],
+        "nutritional_info": {
+          "calories": 200,
+          "protein": "10g",
+          "carbohydrates": "30g",
+          "fats": "5g",
+          "sugar": "5g"
+        },
+        "preparation_instructions": [
+          "Preheat the oven to 200°C (400°F).",
+          "Pat dry the chickpeas with a paper towel to remove excess moisture.",
+          "In a bowl, toss chickpeas with olive oil, cayenne pepper, cumin, paprika, and salt.",
+          "Spread the chickpeas on a baking sheet and roast for 30-40 minutes until crispy.",
+          "Let them cool before serving."
+        ],
+        "estimated_cost": "$5"
+      }
+    ]
+  };
 
   isLoading = false;
+  isSubmitted = false;
 
   goalForm!: FormGroup;
   userDetailsForm!: FormGroup;
@@ -176,6 +413,8 @@ export class HomeComponent {
   }
 
   async submitForm() {
+    this.isSubmitted = true;
+
     let primaryGoalData = {
       primaryGoal: this.goalForm.get('primaryGoal')?.value
     };
@@ -211,18 +450,23 @@ export class HomeComponent {
 
     this.isLoading = true;
 
-    const stream = await this.aiService.generate(data)
+    const stream = await this.aiService.generate(data).then((res) => {
+      const aiResponse = res.choices[0].message.content || '';
+      this.aiResponse = JSON.parse(aiResponse) as AiResponse;
+      console.log(this.aiResponse);
+      this.isLoading = false;
+    });
 
 
-    for await (const chunk of stream) {
-      const aiResponse = chunk.choices[0].delta.content || '';
-      console.log(aiResponse)
-      if (aiResponse !== undefined || aiResponse !== "undefined") {
-        this.aiResponse += aiResponse;
-      }
-      console.log(this.aiResponse)
-    }
-    this.isLoading = true
+    // for await (const chunk of stream) {
+    //   const aiResponse = chunk.choices[0].delta.content || '';
+    //   console.log(aiResponse)
+    //   if (aiResponse !== undefined || aiResponse !== "undefined") {
+    //     this.aiResponse += aiResponse;
+    //   }
+    //   console.log(this.aiResponse)
+    // }
+    // this.isLoading = true;
 
 
   }

@@ -28,11 +28,13 @@ import {MatCheckbox} from "@angular/material/checkbox";
 import {MatDivider} from "@angular/material/divider";
 import {MatChipGrid, MatChipInput, MatChipRemove, MatChipRow} from "@angular/material/chips";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
+import { MealInfoComponent } from './pages/home/meal-info/meal-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MealInfoComponent
   ],
     imports: [
         BrowserModule,

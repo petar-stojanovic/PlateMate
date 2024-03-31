@@ -1,28 +1,7 @@
 import {Injectable} from '@angular/core';
 import OpenAI from "openai";
+import {responseFormat} from "../shared/const/response-format";
 
-const responseFormat = `
-{
-    "meals" : [
-        {
-            "meal_time": "Breakfast" | "Lunch" | "Dinner" | "Snack",
-            "recipe_name": string,
-            "ingredients": [
-              {"ingredient": string, "amount": string},
-              ...
-            ],
-            "nutritional_info": {
-              "calories": number,
-              "protein": string,
-              "carbohydrates": string,
-              "fats": string,
-            },
-            "preparation_instructions": string,
-            "estimated_cost": string
-        },
-    ]
-}
-`
 @Injectable({
   providedIn: 'root'
 })
@@ -38,11 +17,12 @@ export class AiService {
 
   async generate(data: any) {
     const stream = await this.openai.chat.completions.create({
-      "model": "gpt-4-0125-preview",
+      // "model": "gpt-4-0125-preview",
+      "model": "gpt-3.5-turbo-0125",
       "response_format": {
         type: "json_object"
       },
-      "stream": true,
+      // "stream": true,
       "messages": [
         {
           "role": "system",
@@ -64,8 +44,8 @@ export class AiService {
             "Activity Level: " + data[2].activityLevel + "\n" +
             "Diet: " + data[3].diet + "\n" +
             "Flavors List: " + data[4].flavorsList.join(', ') + "\n" +
-            // "Meals Per Day: " + data[5].mealsPerDay + "\n" +
-            "Meals Per Day: " + 1 + "\n" +
+            "Meals Per Day: " + data[5].mealsPerDay + "\n" +
+            // "Meals Per Day: " + 1 + "\n" +
             "Allergy List: " + data[6].allergyList.join(', ') + "\n" +
             "Maximum price per meal : " + data[7].price + "\n" +
             "Additional Information: " + data[8].additionalInformation

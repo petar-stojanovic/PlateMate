@@ -218,11 +218,10 @@
           <mat-form-field class="mt-16" subscriptSizing="dynamic">
             <mat-label>Select</mat-label>
             <mat-select formControlName="mealsPerDay">
+              <mat-option value="1">1</mat-option>
               <mat-option value="2">2</mat-option>
               <mat-option value="3">3</mat-option>
               <mat-option value="4">4</mat-option>
-              <mat-option value="5">5</mat-option>
-              <mat-option value="6">6</mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -318,16 +317,25 @@
 
         <div class="mt-16">
           <button mat-raised-button color="primary" class="mx-10" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" class="mx-10" (click)="submitForm()">Submit</button>
+          <button mat-raised-button color="primary" class="mx-10" [disabled]="isSubmitted" (click)="submitForm()">
+            Submit
+          </button>
         </div>
       </form>
     </mat-step>
 
   </mat-stepper>
 
-  <div>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
 
-    <pre style="max-width:  98vw;">{{ aiResponse }}</pre>
-  </div>
+<!--  @if (isSubmitted) {-->
+    @if (aiResponse) {
+      @for (meal of aiResponse.meals; track meal) {
+        <app-meal-info [meal]="meal"></app-meal-info>
+      }
+    } @else {
+      <!-- Loading -->
+      <mat-spinner *ngIf="isLoading" class="m-auto"></mat-spinner>
+    }
+<!--  }-->
+
 </div>
