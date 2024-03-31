@@ -18,76 +18,62 @@ export class HomeComponent {
 
   // aiResponse: AiResponse | null = null;
   aiResponse: AiResponse | null = {
-    meals: [
+    "meals": [
       {
         "meal_time": "Breakfast",
-        "recipe_name": "Spicy Veggie Omelette",
-        "description": "A flavorful and protein-rich omelette with bell peppers, onions, tomatoes, spinach, and cheese, seasoned with chili flakes.",
+        "recipe_name": "Greek Yogurt Parfait",
+        "description": "A light and refreshing breakfast option with layers of Greek yogurt, fresh berries, and crunchy granola.",
         "ingredients": [
           {
-            "ingredient": "Eggs",
-            "amount": "2"
+            "ingredient": "Greek yogurt",
+            "amount": "1 cup"
           },
           {
-            "ingredient": "Bell peppers",
-            "amount": "1/2 cup, chopped"
-          },
-          {
-            "ingredient": "Onions",
-            "amount": "1/4 cup, chopped"
-          },
-          {
-            "ingredient": "Tomatoes",
-            "amount": "1/4 cup, chopped"
-          },
-          {
-            "ingredient": "Spinach",
+            "ingredient": "Mixed berries",
             "amount": "1/2 cup"
           },
           {
-            "ingredient": "Cheese",
-            "amount": "2 tbsp"
+            "ingredient": "Granola",
+            "amount": "1/4 cup"
           },
           {
-            "ingredient": "Chili flakes",
-            "amount": "1 tsp"
-          },
-          {
-            "ingredient": "Salt",
-            "amount": "to taste"
-          },
-          {
-            "ingredient": "Black pepper",
-            "amount": "to taste"
+            "ingredient": "Honey",
+            "amount": "1 tbsp"
           }
         ],
+        "categories": [
+          "Healthy",
+          "Quick & Easy",
+          "Breakfast"
+        ],
         "nutritional_info": {
-          "calories": 350,
-          "protein": "25g",
-          "carbohydrates": "10g",
-          "fats": "20g",
-          "sugar": "5g"
+          "calories": 250,
+          "protein": "15g",
+          "carbohydrates": "40g",
+          "fats": "5g",
+          "sugar": "20g",
+          "fiber": "6g"
         },
         "preparation_instructions": [
-          "Beat the eggs in a bowl and season with salt and pepper.",
-          "Heat a non-stick pan and add bell peppers, onions, and tomatoes. Cook for 2 minutes.",
-          "Add spinach and chili flakes, cook for another minute.",
-          "Pour the beaten eggs over the veggies in the pan. Sprinkle cheese on top.",
-          "Cook until the omelette is set. Fold in half and serve hot."
+          "In a glass or bowl, layer Greek yogurt, mixed berries, and granola.",
+          "Drizzle honey on top for added sweetness.",
+          "Enjoy this crunchy and satisfying parfait!"
         ],
-        "estimated_cost": "$8"
+        "estimated_cost": "$5 - $8",
+        "time_to_prepare": "5 minutes",
+        "servings": 1
       },
       {
         "meal_time": "Lunch",
         "recipe_name": "Grilled Chicken Salad",
-        "description": "A refreshing and protein-packed salad with grilled chicken breast, fresh vegetables, and a zesty dressing.",
+        "description": "A hearty and protein-packed salad with grilled chicken, mixed greens, crunchy vegetables, and a zesty vinaigrette.",
         "ingredients": [
           {
-            "ingredient": "Chicken breast",
-            "amount": "1"
+            "ingredient": "Grilled chicken breast",
+            "amount": "4 oz"
           },
           {
-            "ingredient": "Lettuce",
+            "ingredient": "Mixed greens",
             "amount": "2 cups"
           },
           {
@@ -95,164 +81,93 @@ export class HomeComponent {
             "amount": "1/2 cup"
           },
           {
-            "ingredient": "Cucumbers",
-            "amount": "1/2 cup, sliced"
+            "ingredient": "Cucumber",
+            "amount": "1/2"
           },
           {
-            "ingredient": "Red onions",
-            "amount": "2 tbsp, thinly sliced"
+            "ingredient": "Bell pepper",
+            "amount": "1/2"
           },
           {
-            "ingredient": "Olive oil",
-            "amount": "1 tbsp"
-          },
-          {
-            "ingredient": "Lemon juice",
-            "amount": "1 tbsp"
-          },
-          {
-            "ingredient": "Garlic powder",
-            "amount": "1/2 tsp"
-          },
-          {
-            "ingredient": "Paprika",
-            "amount": "1/2 tsp"
-          },
-          {
-            "ingredient": "Salt",
-            "amount": "to taste"
-          },
-          {
-            "ingredient": "Black pepper",
-            "amount": "to taste"
+            "ingredient": "Vinaigrette dressing",
+            "amount": "2 tbsp"
           }
         ],
+        "categories": [
+          "Protein-rich",
+          "Salad",
+          "Lunch"
+        ],
         "nutritional_info": {
-          "calories": 400,
+          "calories": 350,
           "protein": "30g",
           "carbohydrates": "15g",
-          "fats": "25g",
-          "sugar": "5g"
+          "fats": "18g",
+          "sugar": "8g",
+          "fiber": "5g"
         },
         "preparation_instructions": [
-          "Season the chicken breast with garlic powder, paprika, salt, and black pepper. Grill until cooked through.",
-          "In a bowl, combine lettuce, cherry tomatoes, cucumbers, and red onions.",
-          "Slice the grilled chicken and add to the salad.",
-          "Drizzle olive oil and lemon juice over the salad. Toss well before serving."
+          "In a large bowl, combine mixed greens, cherry tomatoes, cucumber, and bell pepper.",
+          "Top with grilled chicken breast slices.",
+          "Drizzle vinaigrette dressing over the salad and toss gently to combine."
         ],
-        "estimated_cost": "$12"
+        "estimated_cost": "$12 - $15",
+        "time_to_prepare": "15 minutes",
+        "servings": 1
       },
       {
         "meal_time": "Dinner",
-        "recipe_name": "Spicy Turkey Stir-Fry",
-        "description": "A quick and easy stir-fry recipe with ground turkey and colorful vegetables, seasoned with soy sauce and sriracha sauce.",
+        "recipe_name": "Baked Salmon with Roasted Vegetables",
+        "description": "A flavorful and nutritious dinner option featuring oven-baked salmon fillet served with a side of assorted roasted vegetables.",
         "ingredients": [
           {
-            "ingredient": "Ground turkey",
-            "amount": "200g"
+            "ingredient": "Salmon fillet",
+            "amount": "6 oz"
           },
           {
-            "ingredient": "Broccoli",
-            "amount": "1 cup, chopped"
+            "ingredient": "Broccoli florets",
+            "amount": "1 cup"
           },
           {
-            "ingredient": "Bell peppers",
-            "amount": "1/2 cup, sliced"
+            "ingredient": "Carrot sticks",
+            "amount": "1/2 cup"
           },
           {
-            "ingredient": "Carrots",
-            "amount": "1/2 cup, sliced"
-          },
-          {
-            "ingredient": "Soy sauce",
-            "amount": "2 tbsp"
-          },
-          {
-            "ingredient": "Sriracha sauce",
-            "amount": "1 tbsp"
-          },
-          {
-            "ingredient": "Garlic",
-            "amount": "2 cloves, minced"
-          },
-          {
-            "ingredient": "Ginger",
-            "amount": "1 tsp, grated"
-          },
-          {
-            "ingredient": "Cooking oil",
-            "amount": "1 tbsp"
-          },
-          {
-            "ingredient": "Salt",
-            "amount": "to taste"
-          },
-          {
-            "ingredient": "Black pepper",
-            "amount": "to taste"
-          }
-        ],
-        "nutritional_info": {
-          "calories": 450,
-          "protein": "35g",
-          "carbohydrates": "20g",
-          "fats": "22g",
-          "sugar": "8g"
-        },
-        "preparation_instructions": [
-          "Heat oil in a pan, add minced garlic and ginger. Saute until fragrant.",
-          "Add ground turkey and cook until browned.",
-          "Stir in soy sauce and sriracha sauce.",
-          "Add vegetables and cook until tender-crisp.",
-          "Season with salt and black pepper. Serve hot."
-        ],
-        "estimated_cost": "$15"
-      },
-      {
-        "meal_time": "Snack",
-        "recipe_name": "Spicy Roasted Chickpeas",
-        "description": "A crunchy and flavorful snack that is high in protein and fiber. Perfect for satisfying your mid-day cravings.",
-        "ingredients": [
-          {
-            "ingredient": "Canned chickpeas",
-            "amount": "1 can (400g), drained and rinsed"
+            "ingredient": "Red bell pepper",
+            "amount": "1/2"
           },
           {
             "ingredient": "Olive oil",
             "amount": "1 tbsp"
           },
           {
-            "ingredient": "Cayenne pepper",
-            "amount": "1/2 tsp"
-          },
-          {
-            "ingredient": "Cumin",
-            "amount": "1/2 tsp"
-          },
-          {
-            "ingredient": "Paprika",
-            "amount": "1/2 tsp"
-          },
-          {
-            "ingredient": "Salt",
-            "amount": "to taste"
+            "ingredient": "Lemon wedges",
+            "amount": "2"
           }
         ],
+        "categories": [
+          "Omega-3-rich",
+          "Dinner",
+          "Low carb"
+        ],
         "nutritional_info": {
-          "calories": 200,
-          "protein": "10g",
-          "carbohydrates": "30g",
-          "fats": "5g",
-          "sugar": "5g"
+          "calories": 400,
+          "protein": "28g",
+          "carbohydrates": "20g",
+          "fats": "22g",
+          "sugar": "8g",
+          "fiber": "6g"
         },
         "preparation_instructions": [
-          "Preheat the oven to 200°C (400°F).",
-          "Pat dry the chickpeas with a paper towel to remove excess moisture.",
-          "In a bowl, toss chickpeas with olive oil, cayenne pepper, cumin, paprika, and salt.",
-          "Spread the chickpeas on a baking sheet and roast for 30-40 minutes until crispy.",
-          "Let them cool before serving."
+          "Preheat the oven to 400°F (200°C).",
+          "Place salmon fillet on a baking sheet and surround it with broccoli, carrot, and red bell pepper.",
+          "Drizzle olive oil over the salmon and vegetables, season with salt and pepper.",
+          "Bake for 15-20 minutes until the salmon is cooked through and vegetables are tender.",
+          "Serve with lemon wedges on the side."
         ],
-        "estimated_cost": "$5"
+        "estimated_cost": "$18 - $25",
+        "time_to_prepare": "25 minutes",
+        "servings": 1
       }
     ]
   };

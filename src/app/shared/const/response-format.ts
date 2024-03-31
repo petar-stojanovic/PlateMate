@@ -9,19 +9,26 @@ export const responseFormat = `
               {"ingredient": string, "amount": string},
               ...
             ],
+            "categories": [
+              string, // Category 1
+              ...     // Additional categories/nutrition profiles
+            ],
             "nutritional_info": {
               "calories": number,
               "protein": string,
               "carbohydrates": string,
               "fats": string,
               "sugar": string,
+              "fiber": string
             },
              "preparation_instructions": [
                 string, // Step 1
                 string, // Step 2
-                ...     // Additional steps
+                ...     // Additional steps as detailed as possible
             ]
-            "estimated_cost": string
+            "estimated_cost": string,
+            "time_to_prepare": string,
+            "servings": number
         },
     ]
 }

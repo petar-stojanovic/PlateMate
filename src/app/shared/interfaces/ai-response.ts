@@ -7,9 +7,12 @@ export interface Meal {
   recipe_name: string
   description: string
   ingredients: Ingredient[]
+  categories: string[]
   nutritional_info: NutritionalInfo
   preparation_instructions: string[]
   estimated_cost: string
+  time_to_prepare: string
+  servings: number
 }
 
 export interface Ingredient {
@@ -23,4 +26,5 @@ export interface NutritionalInfo {
   carbohydrates: string
   fats: string
   sugar: string
+  fiber: string
 }

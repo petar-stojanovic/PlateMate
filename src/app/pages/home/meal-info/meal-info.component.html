@@ -1,29 +1,52 @@
 <div class="w-40">
 
-  <h2 class="meal-time">{{ meal.meal_time }}</h2>
-  <h3 class="recipe-name">{{ meal.recipe_name }}</h3>
-  <p class="description">{{ meal.description }}</p>
-  <p>Estimated Cost: {{ meal.estimated_cost }}</p>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ meal.recipe_name }}</mat-card-title>
+      <mat-card-subtitle>{{ meal.meal_time }}</mat-card-subtitle>
+    </mat-card-header>
 
-  <h4 class="ingredients">Ingredients</h4>
-  <ul>
-    <li *ngFor="let ingredient of meal.ingredients">
-      {{ ingredient.amount }} {{ ingredient.ingredient }}
-    </li>
-  </ul>
+    <mat-card-content>
+      <p>{{ meal.description }}</p>
+      <div class="box">
+        <div class="meal-details">
+          <span><p class="fw-bold">Cost: </p> {{ meal.estimated_cost }}</span>
+          <span><p class="fw-bold">Servings: </p> {{ meal.servings }}</span>
+          <span><p class="fw-bold">Time to prepare: </p> {{ meal.time_to_prepare }}</span>
+        </div>
+        <hr class="w-100">
+        <div class="w-100">
+          <p class="fw-bold">Categories:</p>
 
-  <h4 class="nutritional-information">Nutritional Information</h4>
-  <p>Calories: {{ meal.nutritional_info.calories }}</p>
-  <p>Protein: {{ meal.nutritional_info.protein }}</p>
-  <p>Carbohydrates: {{ meal.nutritional_info.carbohydrates }}</p>
-  <p>Fats: {{ meal.nutritional_info.fats }}</p>
-  <p>Sugar: {{ meal.nutritional_info.sugar }}</p>
+          @for (category of meal.categories; track category) {
+            <span>{{ category }} <span *ngIf="!$last" class="category-margin"> - </span></span>
+          }
+        </div>
 
-  <h4 class="preparation-instruction">Preparation Instructions</h4>
-  <ul>
-    <li *ngFor="let instruction of meal.preparation_instructions; let i = index">
-      Step {{ i + 1 }}: {{ instruction }}
-    </li>
-  </ul>
+      </div>
+
+      <h2 class="ingredients">Ingredients:</h2>
+      <ul>
+        <li *ngFor="let ingredient of meal.ingredients">{{ ingredient.amount }} {{ ingredient.ingredient }}</li>
+      </ul>
+
+      <h2 class="nutritional-info">Nutritional Info:</h2>
+      <ul>
+        <li>Calories: {{ meal.nutritional_info.calories }}</li>
+        <li>Protein: {{ meal.nutritional_info.protein }}</li>
+        <li>Carbohydrates: {{ meal.nutritional_info.carbohydrates }}</li>
+        <li>Fats: {{ meal.nutritional_info.fats }}</li>
+        <li>Sugar: {{ meal.nutritional_info.sugar }}</li>
+        <li>Fiber: {{ meal.nutritional_info.fiber }}</li>
+      </ul>
+
+
+      <h2 class="preparation">Preparation:</h2>
+      <ol>
+        <li *ngFor="let instruction of meal.preparation_instructions">{{ instruction }}</li>
+      </ol>
+    </mat-card-content>
+  </mat-card>
+
 
 </div>
