@@ -21,56 +21,67 @@ export class HomeComponent {
   //   "meals": [
   //     {
   //       "meal_time": "Breakfast",
-  //       "recipe_name": "Greek Yogurt Parfait",
-  //       "description": "A light and refreshing breakfast option with layers of Greek yogurt, fresh berries, and crunchy granola.",
+  //       "recipe_name": "Scrambled Eggs with Spinach and Whole Wheat Toast",
+  //       "description": "A hearty and nutritious breakfast, combining the richness of eggs with the freshness of spinach, served with whole wheat toast for a balanced start.",
   //       "ingredients": [
   //         {
-  //           "ingredient": "Greek yogurt",
+  //           "ingredient": "Eggs",
+  //           "amount": "2 large"
+  //         },
+  //         {
+  //           "ingredient": "Spinach",
   //           "amount": "1 cup"
   //         },
   //         {
-  //           "ingredient": "Mixed berries",
-  //           "amount": "1/2 cup"
+  //           "ingredient": "Whole wheat bread",
+  //           "amount": "2 slices"
   //         },
   //         {
-  //           "ingredient": "Granola",
-  //           "amount": "1/4 cup"
+  //           "ingredient": "Olive oil",
+  //           "amount": "1 tsp"
   //         },
   //         {
-  //           "ingredient": "Honey",
-  //           "amount": "1 tbsp"
+  //           "ingredient": "Salt",
+  //           "amount": "to taste"
+  //         },
+  //         {
+  //           "ingredient": "Pepper",
+  //           "amount": "to taste"
   //         }
   //       ],
   //       "categories": [
-  //         "Healthy",
-  //         "Quick & Easy",
-  //         "Breakfast"
+  //         "Breakfast",
+  //         "High Protein",
+  //         "Low Calorie"
   //       ],
   //       "nutritional_info": {
-  //         "calories": 250,
-  //         "protein": "15g",
-  //         "carbohydrates": "40g",
-  //         "fats": "5g",
-  //         "sugar": "20g",
+  //         "calories": 350,
+  //         "protein": "20g",
+  //         "carbohydrates": "35g",
+  //         "fats": "15g",
+  //         "sugar": "4g",
   //         "fiber": "6g"
   //       },
   //       "preparation_instructions": [
-  //         "In a glass or bowl, layer Greek yogurt, mixed berries, and granola.",
-  //         "Drizzle honey on top for added sweetness.",
-  //         "Enjoy this crunchy and satisfying parfait!"
+  //         "Heat the olive oil in a non-stick pan over medium heat.",
+  //         "Add spinach and stir until wilted, set aside.",
+  //         "In a bowl, beat the eggs and season with salt and pepper.",
+  //         "Pour the eggs into the pan, add the spinach, and scramble until fully cooked.",
+  //         "Toast the whole wheat bread slices.",
+  //         "Serve the scrambled eggs hot with the toast on the side."
   //       ],
-  //       "estimated_cost": "$5 - $8",
-  //       "time_to_prepare": "5 minutes",
+  //       "estimated_cost": "$6",
+  //       "time_to_prepare": "15 minutes",
   //       "servings": 1
   //     },
   //     {
   //       "meal_time": "Lunch",
   //       "recipe_name": "Grilled Chicken Salad",
-  //       "description": "A hearty and protein-packed salad with grilled chicken, mixed greens, crunchy vegetables, and a zesty vinaigrette.",
+  //       "description": "A refreshing and protein-rich salad, featuring grilled chicken over a bed of mixed greens, cherry tomatoes, cucumbers, and a light vinaigrette.",
   //       "ingredients": [
   //         {
-  //           "ingredient": "Grilled chicken breast",
-  //           "amount": "4 oz"
+  //           "ingredient": "Chicken breast",
+  //           "amount": "1 (200g)"
   //         },
   //         {
   //           "ingredient": "Mixed greens",
@@ -82,95 +93,154 @@ export class HomeComponent {
   //         },
   //         {
   //           "ingredient": "Cucumber",
-  //           "amount": "1/2"
-  //         },
-  //         {
-  //           "ingredient": "Bell pepper",
-  //           "amount": "1/2"
-  //         },
-  //         {
-  //           "ingredient": "Vinaigrette dressing",
-  //           "amount": "2 tbsp"
-  //         }
-  //       ],
-  //       "categories": [
-  //         "Protein-rich",
-  //         "Salad",
-  //         "Lunch"
-  //       ],
-  //       "nutritional_info": {
-  //         "calories": 350,
-  //         "protein": "30g",
-  //         "carbohydrates": "15g",
-  //         "fats": "18g",
-  //         "sugar": "8g",
-  //         "fiber": "5g"
-  //       },
-  //       "preparation_instructions": [
-  //         "In a large bowl, combine mixed greens, cherry tomatoes, cucumber, and bell pepper.",
-  //         "Top with grilled chicken breast slices.",
-  //         "Drizzle vinaigrette dressing over the salad and toss gently to combine."
-  //       ],
-  //       "estimated_cost": "$12 - $15",
-  //       "time_to_prepare": "15 minutes",
-  //       "servings": 1
-  //     },
-  //     {
-  //       "meal_time": "Dinner",
-  //       "recipe_name": "Baked Salmon with Roasted Vegetables",
-  //       "description": "A flavorful and nutritious dinner option featuring oven-baked salmon fillet served with a side of assorted roasted vegetables.",
-  //       "ingredients": [
-  //         {
-  //           "ingredient": "Salmon fillet",
-  //           "amount": "6 oz"
-  //         },
-  //         {
-  //           "ingredient": "Broccoli florets",
-  //           "amount": "1 cup"
-  //         },
-  //         {
-  //           "ingredient": "Carrot sticks",
-  //           "amount": "1/2 cup"
-  //         },
-  //         {
-  //           "ingredient": "Red bell pepper",
-  //           "amount": "1/2"
+  //           "amount": "1/2 cup sliced"
   //         },
   //         {
   //           "ingredient": "Olive oil",
   //           "amount": "1 tbsp"
   //         },
   //         {
-  //           "ingredient": "Lemon wedges",
-  //           "amount": "2"
+  //           "ingredient": "Balsamic vinegar",
+  //           "amount": "1 tbsp"
+  //         },
+  //         {
+  //           "ingredient": "Salt",
+  //           "amount": "to taste"
+  //         },
+  //         {
+  //           "ingredient": "Pepper",
+  //           "amount": "to taste"
   //         }
   //       ],
   //       "categories": [
-  //         "Omega-3-rich",
-  //         "Dinner",
-  //         "Low carb"
+  //         "Lunch",
+  //         "High Protein",
+  //         "Low Carb"
   //       ],
   //       "nutritional_info": {
   //         "calories": 400,
-  //         "protein": "28g",
-  //         "carbohydrates": "20g",
+  //         "protein": "35g",
+  //         "carbohydrates": "10g",
   //         "fats": "22g",
-  //         "sugar": "8g",
+  //         "sugar": "6g",
+  //         "fiber": "3g"
+  //       },
+  //       "preparation_instructions": [
+  //         "Preheat the grill to medium-high heat.",
+  //         "Season the chicken breast with salt and pepper.",
+  //         "Grill the chicken for 6-7 minutes per side or until fully cooked. Let it rest before slicing.",
+  //         "In a large bowl, combine mixed greens, cherry tomatoes, and cucumber.",
+  //         "Whisk together olive oil and balsamic vinegar, drizzle over the salad, and toss.",
+  //         "Top the salad with sliced grilled chicken."
+  //       ],
+  //       "estimated_cost": "$10",
+  //       "time_to_prepare": "30 minutes",
+  //       "servings": 1
+  //     },
+  //     {
+  //       "meal_time": "Snack",
+  //       "recipe_name": "Greek Yogurt with Honey and Nuts",
+  //       "description": "A smooth, creamy Greek yogurt topped with a drizzle of honey and a sprinkle of mixed nuts for a sweet and satisfying snack.",
+  //       "ingredients": [
+  //         {
+  //           "ingredient": "Greek yogurt",
+  //           "amount": "1 cup"
+  //         },
+  //         {
+  //           "ingredient": "Honey",
+  //           "amount": "1 tbsp"
+  //         },
+  //         {
+  //           "ingredient": "Mixed nuts",
+  //           "amount": "1/4 cup"
+  //         }
+  //       ],
+  //       "categories": [
+  //         "Snack",
+  //         "High Protein"
+  //       ],
+  //       "nutritional_info": {
+  //         "calories": 200,
+  //         "protein": "11g",
+  //         "carbohydrates": "18g",
+  //         "fats": "10g",
+  //         "sugar": "17g",
+  //         "fiber": "2g"
+  //       },
+  //       "preparation_instructions": [
+  //         "Scoop the Greek yogurt into a bowl.",
+  //         "Drizzle the honey over the yogurt.",
+  //         "Sprinkle the mixed nuts on top.",
+  //         "Serve immediately or chill for a cooler treat."
+  //       ],
+  //       "estimated_cost": "$4",
+  //       "time_to_prepare": "5 minutes",
+  //       "servings": 1
+  //     },
+  //     {
+  //       "meal_time": "Dinner",
+  //       "recipe_name": "Pork Chops with Mashed Potatoes and Green Beans",
+  //       "description": "Juicy grilled pork chops served with creamy mashed potatoes and steamed green beans for a classic and hearty dinner.",
+  //       "ingredients": [
+  //         {
+  //           "ingredient": "Pork chops",
+  //           "amount": "2 (6oz each)"
+  //         },
+  //         {
+  //           "ingredient": "Potatoes",
+  //           "amount": "3 medium"
+  //         },
+  //         {
+  //           "ingredient": "Green beans",
+  //           "amount": "1 cup"
+  //         },
+  //         {
+  //           "ingredient": "Butter",
+  //           "amount": "2 tbsp"
+  //         },
+  //         {
+  //           "ingredient": "Milk",
+  //           "amount": "1/4 cup"
+  //         },
+  //         {
+  //           "ingredient": "Salt",
+  //           "amount": "to taste"
+  //         },
+  //         {
+  //           "ingredient": "Pepper",
+  //           "amount": "to taste"
+  //         },
+  //         {
+  //           "ingredient": "Olive oil",
+  //           "amount": "1 tsp"
+  //         }
+  //       ],
+  //       "categories": [
+  //         "Dinner",
+  //         "High Protein",
+  //         "Comfort Food"
+  //       ],
+  //       "nutritional_info": {
+  //         "calories": 600,
+  //         "protein": "45g",
+  //         "carbohydrates": "45g",
+  //         "fats": "28g",
+  //         "sugar": "5g",
   //         "fiber": "6g"
   //       },
   //       "preparation_instructions": [
-  //         "Preheat the oven to 400°F (200°C).",
-  //         "Place salmon fillet on a baking sheet and surround it with broccoli, carrot, and red bell pepper.",
-  //         "Drizzle olive oil over the salmon and vegetables, season with salt and pepper.",
-  //         "Bake for 15-20 minutes until the salmon is cooked through and vegetables are tender.",
-  //         "Serve with lemon wedges on the side."
+  //         "Preheat your grill or skillet over medium-high heat and brush with olive oil.",
+  //         "Season the pork chops with salt and pepper, grill each side for 4-5 minutes or until fully cooked. Let them rest.",
+  //         "Boil the potatoes until tender, mash them with butter, milk, salt, and pepper until smooth.",
+  //         "Steam the green beans until tender-crisp.",
+  //         "Serve the grilled pork chops with mashed potatoes and green beans on the side."
   //       ],
-  //       "estimated_cost": "$18 - $25",
-  //       "time_to_prepare": "25 minutes",
+  //       "estimated_cost": "$15",
+  //       "time_to_prepare": "45 minutes",
   //       "servings": 1
   //     }
   //   ]
-  // };
+  // }
 
   isLoading = false;
   isSubmitted = false;

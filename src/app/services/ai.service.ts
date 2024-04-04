@@ -17,8 +17,8 @@ export class AiService {
 
   async generate(data: any) {
     const stream = await this.openai.chat.completions.create({
-      // "model": "gpt-4-0125-preview",
-      "model": "gpt-3.5-turbo-0125",
+      "model": "gpt-4-0125-preview",
+      // "model": "gpt-3.5-turbo-0125",
       "response_format": {
         type: "json_object"
       },
